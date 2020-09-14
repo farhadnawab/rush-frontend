@@ -1,6 +1,4 @@
-# Rush Web Application
-
-Tech Used:
+## Tech Used:
 - Html
 - CSS
 - SCSS
