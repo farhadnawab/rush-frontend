@@ -1,6 +1,11 @@
-// Your variable overrides
-$primary: #ccc;
-$body-bg: $primary;
+// Fonts import
+@import "fonts";
+
+// Variable overrides/custom
+@import "variables";
 
 // Bootstrap and its default variables
 @import "~bootstrap/scss/bootstrap";
+
+// Global styling
+@import "global"

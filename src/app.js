@@ -1,6 +1,8 @@
-import 'jquery';
+import $ from 'jquery';
 import 'popper.js';
 import 'bootstrap';
 import './scss/style.scss';
 
-console.log('worked!');
+$(() => {
+  console.log('ready!');
+});

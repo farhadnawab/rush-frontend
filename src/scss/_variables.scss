@@ -1,0 +1,131 @@
+// Variable overrides
+$font-family-metropolis: 'Metropolis';
+$font-family-inter: 'Inter';
+$font-family-base: $font-family-inter;
+
+$spacer: 1rem;
+$spacers: (
+  6: ($spacer * 4)
+);
+
+$font-size-base: 1rem; // 16px
+$font-size-lg: $font-size-base * 2; // 32px
+$font-size-md: $font-size-base * 1.5; // 24px
+$font-size-sm: $font-size-base * .875; // 14px
+$font-size-xs: $font-size-base * .75; // 12px
+
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+$grid-breakpoints: (
+  xs: 0,
+  xs2: 320px,
+  xs3: 360px,
+  xs4: 375px,
+  xs5: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Color variations
+$primary-050: #f5fafe;
+$primary-100: #cfe8fc;
+$primary-200: #99deff;
+$primary-300: #66c5ff;
+$primary-400: #3fadff;
+$primary-500: #0085ff;
+$primary-600: #0066db;
+$primary-700: #004cb7;
+$primary-800: #003693;
+$primary-900: #00267a;
+
+$secondary-050: #fff3e6;
+$secondary-100: #ffe7cc;
+$secondary-200: #ffce99;
+$secondary-300: #ffb666;
+$secondary-400: #ff9d33;
+$secondary-500: #ff8500;
+$secondary-600: #cc6a00;
+$secondary-700: #995000;
+$secondary-800: #804200;
+$secondary-900: #663500;
+
+$gray-050: #f7f7f8;
+$gray-100: #efeff0;
+$gray-200: #e9e9eb;
+$gray-300: #cdcfd4;
+$gray-400: #abb0b8;
+$gray-500: #7e8592;
+$gray-600: #4b5569;
+$gray-700: #2f3a50;
+$gray-800: #1e2533;
+$gray-900: #121721;
+
+$success-light: #33e586;
+$success-lightest: #a3fdb6;
+
+$danger-light: #ee1142;
+$danger-lightest: #f24a58;
+
+$warning-light: #ffd93f;
+$warning-lightest: #ffe87C;
+
+$info-light: #9fecff;
+$info-lightest: #cbfcff;
+
+// Color set
+$primary: #2d4bfe;
+$secondary: #ff8500;
+$gray: #7e8592;
+$success: #45ce78;
+$danger: #d20f3a;
+$warning: #ffc700;
+$info: #7fDeff;
+
+$theme-colors: (
+  "primary":        $primary,
+  "secondary":      $secondary,
+  "gray":           $gray,
+  "success":        $success,
+  "info":           $info,
+  "warning":        $warning,
+  "danger":         $danger,
+
+  "primary-050":    $primary-050,
+  "primary-100":    $primary-100,
+  "primary-200":    $primary-200,
+  "primary-300":    $primary-300,
+  "primary-400":    $primary-400,
+  "primary-500":    $primary-500,
+  "primary-600":    $primary-600,
+  "primary-700":    $primary-700,
+  "primary-800":    $primary-800,
+  "primary-900":    $primary-900,
+
+  "secondary-050":  $secondary-050,
+  "secondary-100":  $secondary-100,
+  "secondary-200":  $secondary-200,
+  "secondary-300":  $secondary-300,
+  "secondary-400":  $secondary-400,
+  "secondary-500":  $secondary-500,
+  "secondary-600":  $secondary-600,
+  "secondary-700":  $secondary-700,
+  "secondary-800":  $secondary-800,
+  "secondary-900":  $secondary-900,
+
+  "gray-050":       $gray-050,
+  "gray-100":       $gray-100,
+  "gray-200":       $gray-200,
+  "gray-300":       $gray-300,
+  "gray-400":       $gray-400,
+  "gray-500":       $gray-500,
+  "gray-600":       $gray-600,
+  "gray-700":       $gray-700,
+  "gray-800":       $gray-800,
+  "gray-900":       $gray-900
+);
+
+// Custom variables
+$navbar-height: 3.5rem;

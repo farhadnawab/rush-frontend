@@ -46,8 +46,8 @@ module.exports = function () {
       }),
       new MinifyPlugin(),
     ]
-      // We join our htmlPlugin array to the end
-      // of our webpack plugins array.
+    // We join our htmlPlugin array to the end
+    // of our webpack plugins array.
       .concat(htmlPlugins),
     module: {
       rules: [
