@@ -8,4 +8,10 @@
 @import "~bootstrap/scss/bootstrap";
 
 // Global styling
-@import "global"
+@import "global";
+
+// Components styling
+@import "components";
+
+// Dark mode styling
+@import "dark";

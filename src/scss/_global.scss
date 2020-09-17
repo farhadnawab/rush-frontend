@@ -24,8 +24,16 @@ h5 {
   line-height: 2rem; // 32px
 }
 h6 {
-  font-size: 1.25; // 20px
-  font-size: 1.625rem; // 26px
+  font-size: 1.25rem; // 20px
+  line-height: 1.625rem; // 26px
+}
+
+// Font Family
+.font-metropolis {
+  font-family: $font-family-metropolis;
+}
+.font-inter {
+  font-family: $font-family-inter;
 }
 
 // Font Weight
@@ -34,4 +42,101 @@ h6 {
 }
 .font-weight-semibold {
   font-weight: $font-weight-semibold;
+}
+
+// Cards
+.card {
+  border: 0;
+  border-radius: 1rem;
+  transition: all ease 0.5s;
+}
+.card-size-1 {
+  max-width: 22.5rem;
+}
+
+// Form Controls
+.form-control:focus {
+  box-shadow: none !important;
+}
+.text-box-variant-1 {
+  background: $primary-050;
+  border: 1px solid $primary-500;
+  border-radius: 0.5rem;
+  font-family: $font-family-inter;
+  color: $primary-900; 
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  padding: 0.8125rem 1rem;
+  height: auto;
+  transition: all ease 0.3s;
+
+  &::-webkit-input-placeholder {
+    font-family: $font-family-metropolis;
+    font-weight: bold;
+    color: $primary-500;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    font-family: $font-family-metropolis;
+    font-weight: bold;
+    color: $primary-500;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+    font-family: $font-family-metropolis;
+    font-weight: bold;
+    color: $primary-500;
+  }
+  &:-ms-input-placeholder {  
+    font-family: $font-family-metropolis;
+    font-weight: bold;
+    color: $primary-500;
+  }
+
+  &:focus {
+    background: $primary-100; 
+    border-color: $primary-500;
+    color: $primary-900;
+    box-shadow: none;
+  }
+}
+
+
+// Validation
+.invalid-feedback {
+  display: none;
+  font-family: $font-family-inter;
+  color: $danger-light;
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+.was-validated .form-control:invalid, .form-control.is-invalid {
+  border-color: $danger-light;
+  background-image: none;
+  padding-right: 0.8125rem;
+
+  &::-webkit-input-placeholder {
+    color: $danger-light;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $danger-light;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: $danger-light;
+  }
+  &:-ms-input-placeholder {  
+    color: $danger-light;
+  }
+}
+
+// Main Container
+.main-container {
+  height: calc(100vh - #{$navbar-height});
+  display: flex;
+  padding: 1rem;
+
+  > .left-column {
+    position: relative;
+    z-index: 1;
+    align-self: center;
+  }
 }

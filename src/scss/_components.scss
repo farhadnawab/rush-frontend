@@ -1,0 +1,88 @@
+// Header
+.navbar {
+  background: $gray-050;
+  height: $navbar-height;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  transition: all ease 0.5s;
+
+  .navbar-brand {
+    @extend h4;
+    font-family: $font-family-metropolis;
+    font-weight: bold;
+    color: inherit !important;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar-nav {
+    align-items: center;
+
+    > li {
+      margin-right: 3rem;
+    }
+    > li a {
+      @extend h6;
+      font-family: $font-family-metropolis;
+      font-weight: bold;
+      color: $gray-500;
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+}
+
+
+// Dark/Light Mode Switcher
+a.toggle-dark-mode-btn {
+  border-radius: 1000px;
+  overflow: hidden;
+  position: relative;
+  width: 108px;
+  height: 48px;
+
+  * {
+    transition: all ease 0.5s;
+  }
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+  }
+  #switcher-dark-mode,
+  #switcher-light-mode {
+    opacity: 0;
+  }
+}
+body:not(.dark-mode) a.toggle-dark-mode-btn {
+
+  #switcher-dark-mode {
+    z-index: 2;
+    opacity: 1;
+  }
+  #switcher-light-mode {
+
+    #sun {
+      transform: translateX(-40%) translateY(10%);
+    }
+    #clouds {
+      transform: translateX(30%) translateY(-10%);
+    }
+  }
+}
+
+// Map
+.map-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  > iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

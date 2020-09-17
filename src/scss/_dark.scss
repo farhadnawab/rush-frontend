@@ -1,0 +1,51 @@
+// Global
+body.dark-mode {
+  color: $primary-050;
+}
+
+// Header
+body.dark-mode .navbar {
+  background: $gray-900;
+}
+
+// Dark/Light Mode Switcher
+body.dark-mode a.toggle-dark-mode-btn {
+
+  #switcher-dark-mode {
+
+    #moon {
+      transform: translateX(50%) translateY(-10%);
+    }
+    #stars {
+      transform: translateX(-35%) translateY(10%);
+    }
+  }
+  #switcher-light-mode {
+    z-index: 2;
+    opacity: 1;
+  }
+} 
+
+// Cards
+body.dark-mode .card {
+  background: $gray-900;
+
+  .text-gray-900 {
+    color: $primary-050 !important;
+  }
+  .text-gray-600 {
+    color: $gray-400 !important;
+  }
+}
+
+// Text boxes
+body.dark-mode .text-box-variant-1 {
+  background: $gray-700;
+  border-color: $primary-400;
+  color: $primary-500;
+
+  &:focus {
+    color: $primary-050;
+    box-shadow: none;
+  }
+}

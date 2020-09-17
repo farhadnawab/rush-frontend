@@ -5,6 +5,7 @@ $font-family-base: $font-family-inter;
 
 $spacer: 1rem;
 $spacers: (
+  '4-5': ($spacer * 2),
   6: ($spacer * 4)
 );
 
@@ -127,5 +128,19 @@ $theme-colors: (
   "gray-900":       $gray-900
 );
 
+// Buttons
+$btn-padding-y:               0.625rem;
+$btn-font-family:             $font-family-metropolis;
+$btn-font-size:               1.125rem;
+$btn-line-height:             1.75rem;
+
+$btn-font-weight:             bold;
+$btn-box-shadow:              none;
+$btn-focus-width:             auto;
+$btn-focus-box-shadow:        none;
+$btn-active-box-shadow:       none;
+
+$btn-border-radius:           0.5rem;
+
 // Custom variables
-$navbar-height: 3.5rem;
+$navbar-height: 6rem;

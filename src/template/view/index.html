@@ -12,52 +12,32 @@
     <!-- Header -->
     ${ require('../include/header.html') }
 
-    <main role="main">
+    <!-- Main Content -->
+    <main class="main-container" role="main">
+      
+      <!-- Map -->
+      ${  require('../include/map.html') }
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <div class="container">
+      <div class="left-column">
           
-          <div class="card box-shadow">
-            <div class="card-body">
-              <form class="form-signin">
-                <h1 class="font-weight-bold text-gray-100">Track Your Order Live</h1>
-                <h3 class="font-weight-normal">Enter your tracking code, e-mail address or phone number</h3>
+        <div class="card card-size-1">
+          <div class="card-body px-4 py-4-5">
+            <form class="needs-validation" novalidate>
+              <h4 class="font-weight-bold text-gray-900 mb-3 font-metropolis">Track Your Order Live</h4>
+              <div class="font-weight-medium text-gray-600 mb-4">Enter your tracking code, e-mail address or phone number</div>
 
-                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail, tracking code or phone number" required autofocus />
-                
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Track Order</button>
-                <a href="javascript:void(0)" class="btn-link d-inline-block">© 2017-2018</p>
-              </form>
-            </div>
+              <input type="email" id="inputEmail" class="form-control text-box-variant-1" placeholder="E-mail, tracking code or phone number" required />
+              <div class="invalid-feedback">
+                Error message will be here
+              </div>
+              
+              <button class="btn btn-primary-500 btn-block mt-3" type="submit">Track Order</button>
+              <button class="btn btn-link btn-block font-weight-bold text-primary-500 mt-1" type="button">Need help?</button>
+            </form>
           </div>
-
         </div>
+
       </div>
-
-      <div class="container">
-        <!-- Example row of columns -->
-        <div class="row">
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div>
-          <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
-          </div>
-        </div>
-
-        <hr>
-
-      </div> <!-- /container -->
 
     </main>
     
