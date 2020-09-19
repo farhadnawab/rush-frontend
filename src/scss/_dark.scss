@@ -52,3 +52,8 @@ body.dark-mode .text-box-variant-1 {
     box-shadow: none;
   }
 }
+
+// Multiple Tracking listing
+body.dark-mode .listing-type-1 {
+  border-color: $gray-800;
+}

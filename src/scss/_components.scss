@@ -91,6 +91,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 .listing-type-1 {
   padding: 1.5rem 1rem;
   border-bottom: 1px solid $gray-200;
+  transition: border-color ease 0.5s;
 
   &:last-child {
     border-bottom: 0;
