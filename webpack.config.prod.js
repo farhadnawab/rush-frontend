@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 // We need Nodes fs module to read directory contents
 const fs = require('fs');
@@ -45,6 +46,14 @@ module.exports = function () {
         chunkFilename: '[id].css',
       }),
       new MinifyPlugin(),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/images'),
+            to: path.resolve(__dirname, 'dist/images'),
+          },
+        ],
+      }),
     ]
     // We join our htmlPlugin array to the end
     // of our webpack plugins array.
@@ -102,6 +111,19 @@ module.exports = function () {
                 webp: {
                   quality: 20,
                 },
+              },
+            },
+          ],
+        },
+        {
+          // Apply rule for fonts files
+          test: /\.(woff|woff2|ttf|otf|eot)$/,
+          use: [
+            {
+              // Using file-loader too
+              loader: 'file-loader',
+              options: {
+                outputPath: 'fonts',
               },
             },
           ],

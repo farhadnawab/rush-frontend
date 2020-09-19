@@ -86,3 +86,23 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     height: 100%;
   }
 }
+
+// Multiple Track listing
+.listing-type-1 {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid $gray-200;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+}
+.product-image {
+  position: relative;
+  margin-right: 1.7rem;
+
+  .product-image-courrier {
+    position: absolute;
+    bottom: -20%;
+    left: 55%;
+  }
+}

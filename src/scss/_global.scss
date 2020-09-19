@@ -2,6 +2,12 @@ body {
   padding-top: $navbar-height;
 }
 
+// helpers
+.rounded-tl-tr-1rem {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
 // Typography
 h1 {
   font-size: 4rem; // 64px
@@ -48,7 +54,11 @@ h6 {
 .card {
   border: 0;
   border-radius: 1rem;
-  transition: all ease 0.5s;
+  transition: background-color ease 0.5s;
+
+  * {
+    transition: background-color ease 0.5s;
+  }
 }
 .card-size-1 {
   max-width: 22.5rem;
@@ -137,6 +147,10 @@ h6 {
   > .left-column {
     position: relative;
     z-index: 1;
-    align-self: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
   }
 }
