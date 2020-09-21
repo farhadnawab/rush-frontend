@@ -67,7 +67,7 @@ body.dark-mode .listing-type-1 {
 body.dark-mode .bg-primary-050 .listing-type-1 {
   border-color: $gray-900;
 }
-body.dark-mode .listing-type-2 .date-box,
+body.dark-mode .listing-type-2 .date-box:not(.primary):not(.danger):not(.warning):not(.success),
 body.dark-mode .listing-type-2 .date-box:after {
   background-color: $gray-800;
 }

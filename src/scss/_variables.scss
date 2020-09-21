@@ -86,13 +86,21 @@ $warning: #ffc700;
 $info: #7fDeff;
 
 $theme-colors: (
-  "primary":        $primary,
-  "secondary":      $secondary,
-  "gray":           $gray,
-  "success":        $success,
-  "info":           $info,
-  "warning":        $warning,
-  "danger":         $danger,
+  "primary":          $primary,
+  "secondary":        $secondary,
+  "gray":             $gray,
+  "success":          $success,
+  "success-light":    $success-light,
+  "success-lightest": $success-lightest,
+  "info":             $info,
+  "info-light":       $info-light,
+  "info-lightest":    $info-lightest,
+  "warning":          $warning,
+  "warning-light":    $warning-light,
+  "warning-lightest": $warning-lightest,
+  "danger":           $danger,
+  "danger-light":     $danger-light,
+  "danger-lightest":  $danger-lightest,
 
   "primary-050":    $primary-050,
   "primary-100":    $primary-100,

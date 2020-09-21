@@ -141,6 +141,14 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
       background: $danger-light;
       color: #fff;
     }
+    &.success {
+      background: $success-light;
+      color: #fff;
+    }
+    &.warning {
+      background: $warning-light;
+      color: #fff;
+    }
 
     &:after {
       content: "";
