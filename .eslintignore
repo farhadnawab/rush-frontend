@@ -4,8 +4,5 @@ node_modules/
 # Package lock Json
 package-lock.json
 
-# Build folter
-dist/
-
 # Vscode settings
 .vscode/
