@@ -4,5 +4,8 @@ node_modules/
 # Package lock Json
 package-lock.json
 
+# Build folder
+dist/
+
 # Vscode settings
 .vscode/
