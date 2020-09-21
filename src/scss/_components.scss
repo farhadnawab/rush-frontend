@@ -38,8 +38,8 @@ a.toggle-dark-mode-btn {
   border-radius: 1000px;
   overflow: hidden;
   position: relative;
-  width: 108px;
-  height: 48px;
+  width: 6.75rem;
+  height: 3rem;
 
   * {
     transition: all ease 0.5s;
@@ -87,8 +87,9 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   }
 }
 
-// Multiple Track listing
+// Listing Component
 .listing-type-1 {
+  display: flex;
   padding: 1.5rem 1rem;
   border-bottom: 1px solid $gray-200;
   transition: border-color ease 0.5s;
@@ -96,14 +97,62 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   &:last-child {
     border-bottom: 0;
   }
+  &.border-2 {
+    border-bottom-width: 2px;
+  }
+  .product-image {
+    position: relative;
+    margin-right: 1.7rem;
+  
+    .product-image-courrier {
+      position: absolute;
+      bottom: -20%;
+      left: 55%;
+    }
+  }
 }
-.product-image {
-  position: relative;
-  margin-right: 1.7rem;
 
-  .product-image-courrier {
-    position: absolute;
-    bottom: -20%;
-    left: 55%;
+.listing-type-2 {
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 2.5rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+  .date-box {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    background: $gray-050;
+    font-family: $font-family-metropolis;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+
+    &.primary {
+      background: $primary-100;
+      color: $primary-500;
+    }
+    &.danger {
+      background: $danger-light;
+      color: #fff;
+    }
+
+    &:after {
+      content: "";
+      width: 2px;
+      height: 2.5rem;
+      background: $gray-050;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transition: inherit;
+    }
   }
 }

@@ -1,11 +1,19 @@
 body {
   padding-top: $navbar-height;
+  line-height: 1.3;
 }
 
 // helpers
 .rounded-tl-tr-1rem {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+.rounded-bl-br-1rem {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.leading-inherit {
+  line-height: inherit !important;
 }
 
 // Typography
@@ -33,6 +41,10 @@ h6 {
   font-size: 1.25rem; // 20px
   line-height: 1.625rem; // 26px
 }
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
 
 // Font Family
 .font-metropolis {
@@ -52,16 +64,54 @@ h6 {
 
 // Cards
 .card {
+  height: 100%;
   border: 0;
   border-radius: 1rem;
-  transition: background-color ease 0.5s;
+  overflow: hidden;
+  transition: all ease 0.5s;
+  transition-property: background-color, border-color;
 
-  * {
-    transition: background-color ease 0.5s;
+  *:not(.collapsing) {
+    transition: all ease 0.5s;
+    transition-property: background-color, border-color;
+  }
+  .card-body {
+    min-height: 0;
+  }
+
+  .footer-actions {
+    display: flex;
+
+    > a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      font-weight: bold;
+      font-family: $font-family-metropolis;
+      color: inherit;
+      border-right: 2px solid #fff;
+      text-decoration: none;
+      transition: inherit;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    > a svg {
+      margin-right: 0.5rem;
+
+      * {
+        color: inherit;
+        fill: currentColor;
+      }
+    }
   }
 }
 .card-size-1 {
-  max-width: 22.5rem;
+  width: 22.5rem;
+  max-width: 100%;
 }
 
 // Form Controls
@@ -148,9 +198,75 @@ h6 {
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     height: 100%;
     overflow: hidden;
     border-radius: 1rem;
   }
+  .left-column > .block {
+    flex-shrink: 1;
+
+    &.active {
+      flex-grow: 1;
+    }
+    &.max-height-desktop {
+      max-height: 560px;
+    }
+  }
+}
+
+// Icons
+.icon-type-1 {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+// Accordion arrow change
+[aria-expanded="false"] {
+
+  .expanded {
+    display: none;
+  }
+  .collapsed {
+    display: block;
+  }
+}
+[aria-expanded="true"] {
+
+  .expanded {
+    display: block;
+  }
+  .collapsed {
+    display: none;
+  }
+}
+
+// Scrollable
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: transparent;
+}
+::-webkit-scrollbar-track
+{
+  border-radius: 12px;
+  background-color: #eee;
+}
+::-webkit-scrollbar-thumb
+{
+  border-radius: 12px;
+	background-color: #A4A5AF;
+}
+
+.scrollable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
 }
