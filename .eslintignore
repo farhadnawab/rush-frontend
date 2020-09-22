@@ -5,7 +5,11 @@ node_modules/
 package-lock.json
 
 # Build folder
+<<<<<<< HEAD
 docs/
+=======
+dist/
+>>>>>>> 2275ea3caa8f418c80bad799e5dbba12691774fc
 
 # Vscode settings
 .vscode/
