@@ -112,6 +112,10 @@ h6 {
 .card-size-1 {
   width: 22.5rem;
   max-width: 100%;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
 }
 
 // Form Controls
@@ -203,15 +207,50 @@ h6 {
     height: 100%;
     overflow: hidden;
     border-radius: 1rem;
+    pointer-events: none;
   }
   .left-column > .block {
     flex-shrink: 1;
+    pointer-events: auto;
 
     &.active {
       flex-grow: 1;
     }
     &.max-height-desktop {
       max-height: 560px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0.5rem;
+
+    &:not(.mobile-layout-1) {
+      padding: 0.5rem 0 0;
+      overflow: auto;
+
+      > .left-column {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        background: #fff;
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: calc(80vh - #{$navbar-height});
+        padding: 0.5rem;
+        pointer-events: auto;
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 69px;
+          height: 4px;
+          left: 0;
+          right: 0;
+          top: 4px;
+          margin: auto;
+          background: #D0D5DB;
+          border-radius: 5px;
+        }
+      }
     }
   }
 }
