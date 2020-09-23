@@ -247,6 +247,11 @@ h6 {
       padding: 0.5rem 0 0;
       overflow: auto;
 
+      &::-webkit-scrollbar {
+        width: 0;
+        background-color: transparent;
+      }
+
       > .left-column {
         display: block;
         border-bottom-left-radius: 0;
