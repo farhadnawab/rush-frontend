@@ -1,6 +1,13 @@
 body {
   padding-top: $navbar-height;
   line-height: 1.3;
+  height: 100vh;
+  height: -webkit-calc(var(--vh, 1vh) * 100);
+  height: expression(var(--vh, 1vh) * 100);
+  height: -moz-calc(var(--vh, 1vh) * 100);
+  height: -o-calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
 
   @include media-breakpoint-down(sm) {
     padding-top: 0;
@@ -198,12 +205,7 @@ h6 {
 
 // Main Container
 .main-container {
-  height: -webkit-calc(100vh - #{$navbar-height});
-  height: expression(100vh - #{$navbar-height});
-  height: -moz-calc(100vh - #{$navbar-height});
-  height: -o-calc(100vh - #{$navbar-height});
-  height: calc(100vh - #{$navbar-height});
-  height: calc(var(--vh, 1vh) * 100 - #{$navbar-height});
+  height: inherit;
   display: flex;
   padding: 1rem;
 
@@ -232,15 +234,12 @@ h6 {
 
   @include media-breakpoint-down(sm) {
     padding: 0.5rem;
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
 
     &.mobile-layout-1 {
       align-items: flex-end;
 
       > .left-column {
-        max-height: 90vh;
-        height: calc(var(--vh, 1vh) * 90);
+        max-height: 90%;
         justify-content: flex-end;
       }
     }
@@ -260,8 +259,7 @@ h6 {
         background: #fff;
         width: 100%;
         justify-content: flex-start;
-        margin-top: 95vh;
-        margin-top: calc(var(--vh, 1vh) * 95);
+        margin-top: 100%;
         padding: 0.5rem;
         pointer-events: auto;
         overflow: auto;
