@@ -20,108 +20,110 @@
 
       <div class="left-column">
         
-        <div class="block">
-          <!-- Card #1 -->
-          <div class="card card-size-1">
-            <div class="card-body flex-grow-0 p-3">
-              <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
-                <div class="text-truncate">
-                  Order for
-                  <div class="text-gray-500">a.kemalakcay@gmail.com</div>
+        <div class="blocks-wrapper">
+          <div class="block">
+            <!-- Card #1 -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-3">
+                <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
+                  <div class="text-truncate">
+                    Order for
+                    <div class="text-gray-500">a.kemalakcay@gmail.com</div>
+                  </div>
+                  <div class="d-flex ml-2">
+                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 mr-2">
+                      ${  require('../components/icons/blue-truck.html') }
+                    </a>
+                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050">
+                      ${  require('../components/icons/blue-document-duplicate.html') }
+                    </a>
+                  </div>
                 </div>
-                <div class="d-flex ml-2">
-                  <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 mr-2">
-                    ${  require('../components/icons/blue-truck.html') }
+              </div>
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 rounded-tl-tr-1rem rounded-bl-br-1rem">
+                <!-- Item 1 -->
+                <div class="listing-type-1 border-2">
+                  <div class="product-image align-self-start">
+                    <img src="/images/product-2.png" />
+                    <img class="product-image-courrier" src="/images/icons/ups-courrier.svg" />
+                  </div>
+                  <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                    <div class="text-truncate">Title of the shipment</div>
+                    <div class="text-gray-500 text-truncate">#1423412445</div>
+                  </div>
+                </div>
+                <!-- More button -->
+                <div class="listing-type-1 py-2">
+                  <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#more-shipments" role="button" aria-expanded="false" aria-controls="more-shipments">
+                    <span class="text-truncate">+3 more shipments</span>
+                    <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                    <img class="expanded" src="/images/icons/orange-arrow-circle-up.svg" />
                   </a>
-                  <a href="javascript:void(0)" class="icon-type-1 bg-primary-050">
-                    ${  require('../components/icons/blue-document-duplicate.html') }
-                  </a>
                 </div>
-              </div>
-            </div>
-            <div class="card-body flex-grow-0 p-0 bg-primary-050 rounded-tl-tr-1rem rounded-bl-br-1rem">
-              <!-- Item 1 -->
-              <div class="listing-type-1 border-2">
-                <div class="product-image align-self-start">
-                  <img src="/rush-frontend/images/product-2.png" />
-                  <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
-                </div>
-                <div class="col p-0 font-weight-bold font-metropolis text-truncate">
-                  <div class="text-truncate">Title of the shipment</div>
-                  <div class="text-gray-500 text-truncate">#1423412445</div>
-                </div>
-              </div>
-              <!-- More button -->
-              <div class="listing-type-1 py-2">
-                <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#more-shipments" role="button" aria-expanded="false" aria-controls="more-shipments">
-                  <span class="text-truncate">+3 more shipments</span>
-                  <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
-                  <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
-                </a>
-              </div>
 
-            </div>
-            <div class="card-body p-0">
-              <div class="scrollable-wrapper">
-                <div class="scrollable">
-                  <div class="collapse" id="more-shipments">
-                    <!-- Item 1 -->
-                    <div class="listing-type-1 flex-column">
-                      <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
-                        <span class="text-truncate">H&M Special Collection</span>
-                        <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <div class="product-image align-self-start">
-                          <img src="/rush-frontend/images/product-2.png" />
-                          <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
+              </div>
+              <div class="card-body p-0">
+                <div class="scrollable-wrapper">
+                  <div class="scrollable">
+                    <div class="collapse" id="more-shipments">
+                      <!-- Item 1 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">H&M Special Collection</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
                         </div>
-                        <div class="col p-0 font-weight-bold font-metropolis text-truncate">
-                          <div class="d-flex">
-                            <div class="text-truncate">UPS Cargo</div>
-                            <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                        <div class="d-flex justify-content-between">
+                          <div class="product-image align-self-start">
+                            <img src="/images/product-2.png" />
+                            <img class="product-image-courrier" src="/images/icons/ups-courrier.svg" />
                           </div>
-                          <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="listing-type-1 flex-column bg-primary-100">
-                      <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
-                        <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
-                        <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <div class="product-image align-self-start">
-                          <img src="/rush-frontend/images/product-2.png" />
-                          <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
-                        </div>
-                        <div class="col p-0 font-weight-bold font-metropolis text-truncate">
-                          <div class="d-flex">
-                            <div class="text-truncate">UPS Cargo</div>
-                            <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
                           </div>
-                          <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
                         </div>
                       </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="listing-type-1 flex-column">
-                      <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
-                        <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
-                        <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <div class="product-image align-self-start">
-                          <img src="/rush-frontend/images/product-2.png" />
-                          <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
+                      <!-- Item 2 -->
+                      <div class="listing-type-1 flex-column bg-primary-100">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
                         </div>
-                        <div class="col p-0 font-weight-bold font-metropolis text-truncate">
-                          <div class="d-flex">
-                            <div class="text-truncate">UPS Cargo</div>
-                            <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                        <div class="d-flex justify-content-between">
+                          <div class="product-image align-self-start">
+                            <img src="/images/product-2.png" />
+                            <img class="product-image-courrier" src="/images/icons/ups-courrier.svg" />
                           </div>
-                          <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 3 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <div class="product-image align-self-start">
+                            <img src="/images/product-2.png" />
+                            <img class="product-image-courrier" src="/images/icons/ups-courrier.svg" />
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -130,165 +132,164 @@
               </div>
             </div>
           </div>
-        </div>
-        
-        <div class="block mt-1">
-          <!-- Card #2 -->
-          <div class="card card-size-1">
-            <div class="card-body flex-grow-0 p-3 bg-primary-050 rounded-bl-br-1rem">
-              <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
-                <button class="btn btn-primary-100 text-primary-500 text-sm" type="submit">Local Dispatch</button>
-                <div class="text-truncate text-sm ml-2">
-                  <div class="text-gray-600 text-truncate">Expected Delivery</div>
-                  08 June 2020
-                </div>
-                <div class="d-flex ml-2">
-                  <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" href="javascript:void(0)" data-toggle="collapse" data-target=".local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch">
-                    <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
-                    <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body p-0">
-              <div class="scrollable-wrapper">
-                <div class="scrollable p-4">
-                  <div class="collapse local-dispatch">
-                    <!-- Item 1 -->
-                    <div class="listing-type-2">
-                      <div class="date-box primary mr-3">
-                        11<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>Local Dispatch</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 2 -->
-                    <div class="listing-type-2">
-                      <div class="date-box danger mr-3">
-                        08<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>Arrived to Country</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="listing-type-2">
-                      <div class="date-box warning mr-3">
-                        05<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>in Transit</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="listing-type-2">
-                      <div class="date-box success mr-3">
-                        04<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>Arrived to Country</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="listing-type-2">
-                      <div class="date-box mr-3">
-                        03<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>in Transit</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 6 -->
-                    <div class="listing-type-2">
-                      <div class="date-box mr-3">
-                        02<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>Pick-up</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 7 -->
-                    <div class="listing-type-2">
-                      <div class="date-box mr-3">
-                        02<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>Pick-up</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-                    <!-- Item 8 -->
-                    <div class="listing-type-2">
-                      <div class="date-box mr-3">
-                        01<br />Jun
-                      </div>
-                      <div class="col p-0 align-self-center font-metropolis">
-                        <b>Registery</b>
-                      </div>
-                      <div class="text-right text-gray-500 text-sm leading-inherit">
-                        2:30 PM GMT+3<br/>
-                        İzmir, Turkey
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="collapse local-dispatch">
-              <div class="footer-actions bg-primary-050">
-                <a href="javascript:void(0)">
-                  ${  require('../components/icons/black-bell.html') } Notify me
-                </a>
-                <a href="javascript:void(0)">
-                  ${  require('../components/icons/black-settings.html') } Options
-                </a>
-                <!-- <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
+          
+          <div class="block mt-1">
+            <!-- Card #2 -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-3 bg-primary-050 rounded-bl-br-1rem">
+                <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
                   <button class="btn btn-primary-100 text-primary-500 text-sm" type="submit">Local Dispatch</button>
                   <div class="text-truncate text-sm ml-2">
                     <div class="text-gray-600 text-truncate">Expected Delivery</div>
                     08 June 2020
                   </div>
                   <div class="d-flex ml-2">
-                    <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch">
-                      <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
-                      <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
+                    <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" href="javascript:void(0)" data-toggle="collapse" data-target=".local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch">
+                      <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                      <img class="expanded" src="/images/icons/orange-arrow-circle-up.svg" />
                     </a>
                   </div>
-                </div> -->
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="scrollable-wrapper">
+                  <div class="scrollable p-4">
+                    <div class="collapse local-dispatch">
+                      <!-- Item 1 -->
+                      <div class="listing-type-2">
+                        <div class="date-box primary mr-3">
+                          11<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Local Dispatch</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 2 -->
+                      <div class="listing-type-2">
+                        <div class="date-box danger mr-3">
+                          08<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Arrived to Country</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 3 -->
+                      <div class="listing-type-2">
+                        <div class="date-box warning mr-3">
+                          05<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>in Transit</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 4 -->
+                      <div class="listing-type-2">
+                        <div class="date-box success mr-3">
+                          04<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Arrived to Country</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 5 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          03<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>in Transit</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 6 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          02<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Pick-up</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 7 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          02<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Pick-up</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 8 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          01<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Registery</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="collapse local-dispatch">
+                <div class="footer-actions bg-primary-050">
+                  <a href="javascript:void(0)">
+                    ${  require('../components/icons/black-bell.html') } Notify me
+                  </a>
+                  <a href="javascript:void(0)">
+                    ${  require('../components/icons/black-settings.html') } Options
+                  </a>
+                  <!-- <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
+                    <button class="btn btn-primary-100 text-primary-500 text-sm" type="submit">Local Dispatch</button>
+                    <div class="text-truncate text-sm ml-2">
+                      <div class="text-gray-600 text-truncate">Expected Delivery</div>
+                      08 June 2020
+                    </div>
+                    <div class="d-flex ml-2">
+                      <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch">
+                        <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                        <img class="expanded" src="/images/icons/orange-arrow-circle-up.svg" />
+                      </a>
+                    </div>
+                  </div> -->
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         
 
       </div>

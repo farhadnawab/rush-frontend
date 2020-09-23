@@ -1,15 +1,11 @@
 html, body {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 body {
   padding-top: $navbar-height;
   line-height: 1.3;
-  height: 100vh;
-  height: -webkit-calc(var(--vh, 1vh) * 100);
-  height: expression(var(--vh, 1vh) * 100);
-  height: -moz-calc(var(--vh, 1vh) * 100);
-  height: -o-calc(var(--vh, 1vh) * 100);
-  height: calc(var(--vh, 1vh) * 100);
 
   @include media-breakpoint-down(sm) {
     padding-top: 0;
@@ -207,32 +203,33 @@ h6 {
 
 // Main Container
 .main-container {
-  height: inherit;
-  display: flex;
+  height: 100%;
   padding: 1rem;
 
   > .left-column {
     position: relative;
     z-index: 10;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     height: 100%;
-    overflow: hidden;
-    border-radius: 1rem;
     pointer-events: none;
-  }
-  .left-column > .block {
-    flex-shrink: 1;
-    pointer-events: auto;
-
-    &.active {
-      flex-grow: 1;
+    
+    .blocks-wrapper{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
     }
-    &.max-height-desktop {
-      max-height: 560px;
+    .blocks-wrapper > .block {
+      flex-shrink: 1;
+      pointer-events: auto;
+  
+      &.active {
+        flex-grow: 1;
+      }
+      &.max-height-desktop {
+        max-height: 560px;
+      }
     }
   }
+  
 
   @include media-breakpoint-down(sm) {
     padding: 0.5rem;
@@ -242,6 +239,8 @@ h6 {
 
       > .left-column {
         max-height: 90%;
+        display: flex;
+        flex-direction: column;
         justify-content: flex-end;
       }
     }
@@ -255,16 +254,13 @@ h6 {
       }
 
       > .left-column {
-        display: block;
+        border-radius: 1rem;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         background: #fff;
         width: 100%;
-        justify-content: flex-start;
-        top: 88%;
-        padding: 0.5rem;
+        top: 80%;
         pointer-events: auto;
-        overflow: auto;
 
         &::-webkit-scrollbar {
           width: 0;
@@ -283,6 +279,21 @@ h6 {
           margin: auto;
           background: #D0D5DB;
           border-radius: 5px;
+        }
+        .blocks-wrapper{
+          overflow: auto;
+          position: absolute;
+          top: 1.5rem;
+          left: 0.5rem;
+          right: 0.5rem;
+          bottom: 0.5rem;
+          display: block;
+
+          &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+            background-color: transparent;
+          }
         }
       }
     }
