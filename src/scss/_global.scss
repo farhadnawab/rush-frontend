@@ -198,8 +198,21 @@ h6 {
 
 // Main Container
 .main-container {
+  height: -webkit-calc(100vh - #{$navbar-height});
+  height: -webkit-calc(var(--vh, 1vh) * 100 - #{$navbar-height});
+
+  height: expression(100vh - #{$navbar-height});
+  height: expression(var(--vh, 1vh) * 100 - #{$navbar-height});
+
+  height: -moz-calc(100vh - #{$navbar-height});
+  height: -moz-calc(var(--vh, 1vh) * 100 - #{$navbar-height});
+
+  height: -o-calc(100vh - #{$navbar-height});
+  height: -o-calc(var(--vh, 1vh) * 100 - #{$navbar-height});
+
   height: calc(100vh - #{$navbar-height});
   height: calc(var(--vh, 1vh) * 100 - #{$navbar-height});
+  
   display: flex;
   padding: 1rem;
 
@@ -229,6 +242,10 @@ h6 {
   @include media-breakpoint-down(sm) {
     padding: 0.5rem;
     height: 100vh;
+    height: -webkit-calc(var(--vh, 1vh) * 100);
+    height: expression(var(--vh, 1vh) * 100);
+    height: -moz-calc(var(--vh, 1vh) * 100);
+    height: -o-calc(var(--vh, 1vh) * 100);
     height: calc(var(--vh, 1vh) * 100);
 
     &.mobile-layout-1 {
@@ -236,11 +253,16 @@ h6 {
 
       > .left-column {
         max-height: 90vh;
+        height: -webkit-calc(var(--vh, 1vh) * 90);
+        height: expression(var(--vh, 1vh) * 90);
+        height: -moz-calc(var(--vh, 1vh) * 90);
+        height: -o-calc(var(--vh, 1vh) * 90);
         height: calc(var(--vh, 1vh) * 90);
         justify-content: flex-end;
       }
     }
     &:not(.mobile-layout-1) {
+      height: 100vh;
       padding: 0.5rem 0 0;
       overflow: auto;
 
@@ -256,6 +278,10 @@ h6 {
         width: 100%;
         justify-content: flex-start;
         margin-top: 95vh;
+        margin-top: -webkit-calc(var(--vh, 1vh) * 95);
+        margin-top: expression(var(--vh, 1vh) * 95);
+        margin-top: -moz-calc(var(--vh, 1vh) * 95);
+        margin-top: -o-calc(var(--vh, 1vh) * 95);
         margin-top: calc(var(--vh, 1vh) * 95);
         padding: 0.5rem;
         pointer-events: auto;
