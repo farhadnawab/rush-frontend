@@ -204,7 +204,7 @@ h6 {
 
   > .left-column {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -227,11 +227,24 @@ h6 {
 
   @include media-breakpoint-down(sm) {
     padding: 0.5rem;
+    height: 100vh;
 
+    &.mobile-layout-1 {
+      align-items: flex-end;
+
+      > .left-column {
+        max-height: 90vh;
+        justify-content: flex-end;
+      }
+    }
     &:not(.mobile-layout-1) {
-      height: 100vh;
       padding: 0.5rem 0 0;
       overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        background-color: transparent;
+      }
 
       > .left-column {
         border-bottom-left-radius: 0;
@@ -239,18 +252,25 @@ h6 {
         background: #fff;
         width: 100%;
         justify-content: flex-start;
-        margin-top: 100%;
+        margin-top: 95vh;
         padding: 0.5rem;
         pointer-events: auto;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+          width: 0;
+          background-color: transparent;
+        }
 
         &:before {
           content: "";
           position: absolute;
+          z-index: 1;
           width: 69px;
           height: 4px;
           left: 0;
           right: 0;
-          top: 4px;
+          top: 7px;
           margin: auto;
           background: #D0D5DB;
           border-radius: 5px;
@@ -306,11 +326,25 @@ h6 {
 	background-color: #A4A5AF;
 }
 
-.scrollable {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
+.scrollable-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  transition: height ease 0.5s;
+
+  > .scrollable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+}
+.active .scrollable-wrapper {
+  height: 100%;
+
+  @include media-breakpoint-down(sm) {
+    min-height: 250px;
+  }
 }
