@@ -5,6 +5,7 @@
   padding-left: 3rem;
   padding-right: 3rem;
   transition: all ease 0.5s;
+  z-index: 9;
 
   .navbar-brand {
     @extend h4;
@@ -79,7 +80,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 
 // Map
 .map-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
