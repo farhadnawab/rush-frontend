@@ -244,9 +244,13 @@ h6 {
       }
     }
     &:not(.mobile-layout-1) {
-      height: 100vh;
       padding: 0.5rem 0 0;
       overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        background-color: transparent;
+      }
 
       > .left-column {
         display: block;
