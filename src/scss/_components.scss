@@ -2,6 +2,7 @@
 .navbar {
   background: $gray-050;
   height: $navbar-height;
+  padding: 0;
   padding-left: 3rem;
   padding-right: 3rem;
   transition: all ease 0.5s;
@@ -20,7 +21,12 @@
     align-items: center;
 
     > li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: $navbar-height;
       margin-right: 3rem;
+      position: relative;
     }
     > li a {
       @extend h6;
@@ -29,6 +35,50 @@
       color: $gray-500;
       margin: 0;
       padding: 0 !important;
+    }
+    > li:hover > a {
+      color: $primary-500;
+    }
+    li:hover > .dropdown {
+      visibility: visible !important;
+      opacity: 1 !important;
+
+      .scrollable-wrapper {
+        height: auto;
+      }
+      .scrollable-wrapper > .scrollable {
+        position: relative;
+        max-height: 70vh;
+      }
+    }
+  }
+  .navbar-nav .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility, opacity ease 0.3s;
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 22px solid #fff;
+      display: block;
+      margin: 8px auto -9px;
+    }
+    .dropdown-content {
+      background: #fff;
+      border-radius: 1.5rem;
+      padding: 1.5rem 1rem;
+    }
+    
+    &.dropdown-previous-shipments {
+      height: 708px;
     }
   }
 
@@ -107,12 +157,27 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   }
   .product-image {
     position: relative;
-    margin-right: 1.7rem;
-  
+    padding-right: 1.2rem;
+    padding-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    
+    .p-image {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100%;
+      background: #fff;
+      overflow: hidden;
+
+      img {
+        object-fit: contain;
+      }
+    }
     .product-image-courrier {
       position: absolute;
-      bottom: -20%;
-      left: 55%;
+      bottom: 0;
+      right: 0;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 }
