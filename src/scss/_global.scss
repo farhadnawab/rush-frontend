@@ -126,6 +126,14 @@ h6 {
     width: 100%;
   }
 }
+.card-size-2 {
+  width: 26.25rem;
+  max-width: 100%;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
 
 // Form Controls
 .form-control:focus {
