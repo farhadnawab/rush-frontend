@@ -13,8 +13,8 @@ $(() => {
   $('.block .collapse').on('show.bs.collapse', (e) => {
     const $this = $(e.currentTarget);
 
-    $('.main-container .left-column > .block').removeClass('active');
-    $('.main-container .left-column > .block .collapse').collapse('hide');
+    $('.blocks-wrapper > .block').removeClass('active');
+    $('.blocks-wrapper > .block .collapse').collapse('hide');
     $this.closest('.block').addClass('active');
   });
   $('.block .collapse').on('hide.bs.collapse', (e) => {
