@@ -21,6 +21,7 @@
 
     > li {
       margin-right: 3rem;
+      position: relative;
     }
     > li a {
       @extend h6;
@@ -29,6 +30,9 @@
       color: $gray-500;
       margin: 0;
       padding: 0 !important;
+    }
+    > li:hover > a {
+      color: $primary-500;
     }
   }
 
