@@ -6,6 +6,13 @@ body.dark-mode {
 // Header
 body.dark-mode .navbar {
   background: $gray-900;
+
+  .navbar-nav .dropdown-menu:before {
+    border-bottom-color: $gray-900;
+  }
+  .dropdown-menu .dropdown-content {
+    background: $gray-900;
+  }
 }
 
 // Dark/Light Mode Switcher
