@@ -246,6 +246,7 @@ h6 {
 
     > .left-column {
       display: block;
+      z-index: 11;
     }
     &.mobile-layout-1 > .left-column .blocks-wrapper {
       padding-top: 2rem;
