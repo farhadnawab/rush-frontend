@@ -137,7 +137,8 @@ $theme-colors: (
 );
 
 // Buttons
-$btn-padding-y:               0.625rem;
+$btn-padding-x:               1rem;
+$btn-padding-y:               0.75rem;
 $btn-font-family:             $font-family-metropolis;
 $btn-font-size:               1.125rem;
 $btn-line-height:             1.75rem;
