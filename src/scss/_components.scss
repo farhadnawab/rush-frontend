@@ -335,6 +335,7 @@ a.toggle-dark-mode-btn {
   border-radius: 1000px;
   overflow: hidden;
   position: relative;
+  z-index: 1;
   width: 108px;
   height: 48px;
 
@@ -343,6 +344,7 @@ a.toggle-dark-mode-btn {
   }
   svg {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     width: 100%;
