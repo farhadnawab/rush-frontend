@@ -2,6 +2,9 @@
 body.dark-mode {
   color: $primary-050;
 }
+body.dark-mode .main-container:not(.mobile-layout-1) > .left-column {
+  background: $gray-900;
+}
 
 // Header
 body.dark-mode .navbar {
