@@ -13,6 +13,20 @@ body.dark-mode .navbar {
   .dropdown-menu .dropdown-content {
     background: $gray-900;
   }
+  .navbar-toggler {
+    background: $primary-500;
+    color: #fff;
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    .navbar-collapse {
+      background: $gray-900;
+    }
+    .navbar-collapse .navbar-nav > li a {
+      color: #fff;
+    }
+  }
 }
 
 // Dark/Light Mode Switcher
@@ -89,3 +103,13 @@ body.dark-mode .icon-type-1{
     stroke: $gray-800;
   }
 } 
+
+// Notify
+body.dark-mode .notification-wrapper {
+  color: #fff;
+  background: $gray-900;
+
+  .notification-description {
+    color: $gray-400;
+  }
+}
