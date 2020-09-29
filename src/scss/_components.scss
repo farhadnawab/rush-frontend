@@ -259,7 +259,7 @@
         opacity: 1;
       }
       &.dropdown-active {
-        justify-content: flex-start;
+        display: block;
       }
 
       .navbar-nav {
