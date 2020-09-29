@@ -149,7 +149,7 @@
     }
     .dropdown-content {
       background: #fff;
-      border-radius: 1.5rem;
+      border-radius: 24px;
       padding: 1.5rem 1rem;
 
       .dropdown-item {
@@ -451,7 +451,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   .date-box {
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     padding: 0.25rem;
     background: $gray-050;
     font-family: $font-family-metropolis;

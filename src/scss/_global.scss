@@ -126,7 +126,7 @@ h6 {
 .card {
   height: 100%;
   border: 0;
-  border-radius: 1rem;
+  border-radius: 16px;
   overflow: hidden;
   transition: all ease 0.5s;
   transition-property: background-color, border-color;
@@ -196,7 +196,7 @@ h6 {
   font-weight: 500;
   background: $primary-050;
   border: 1px solid $primary-500;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   color: $primary-900; 
   padding: 0.8125rem 1rem;
   height: auto;
@@ -312,7 +312,7 @@ h6 {
       }
 
       > .left-column {
-        border-radius: 1rem;
+        border-radius: 24px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         background: #fff;
