@@ -127,6 +127,7 @@ module.exports = function () {
               loader: 'file-loader',
               options: {
                 outputPath: 'fonts',
+                name: '[name].[ext]',
               },
             },
           ],
