@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import 'popper.js';
+import './scss/_fonts.scss';
 import 'bootstrap';
 import './scss/style.scss';
 
