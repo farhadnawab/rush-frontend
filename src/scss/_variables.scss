@@ -1,6 +1,8 @@
 // Variable overrides
-$font-family-metropolis: 'Metropolis';
-$font-family-inter: 'Inter';
+$font-family-metropolis: 'Metropolis', sans-serif;
+$font-family-inter: 'Inter', sans-serif;
+$font-family-sans-serif: sans-serif;
+$font-family-monospace: monospace;
 $font-family-base: $font-family-inter;
 
 $spacer: 1rem;
