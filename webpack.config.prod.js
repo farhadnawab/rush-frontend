@@ -34,13 +34,16 @@ module.exports = function () {
     entry: [
       './src/app.js',
     ],
+    output: {
+      path: path.resolve(__dirname, 'docs'),
+    },
     optimization: {
       minimizer: [
         new OptimizeCSSAssetsPlugin(),
       ],
     },
     plugins: [
-      new CleanWebpackPlugin(['dist']),
+      new CleanWebpackPlugin(['docs']),
       new MiniCssExtractPlugin({
         filename: '[name].css',
         chunkFilename: '[id].css',
@@ -50,7 +53,23 @@ module.exports = function () {
         patterns: [
           {
             from: path.resolve(__dirname, './src/images'),
-            to: path.resolve(__dirname, 'dist/images'),
+            to: path.resolve(__dirname, 'docs/images'),
+          },
+        ],
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/manifest.json'),
+            to: path.resolve(__dirname, 'docs/manifest.json'),
+          },
+        ],
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/serviceWorker.js'),
+            to: path.resolve(__dirname, 'docs/serviceWorker.js'),
           },
         ],
       }),
@@ -124,6 +143,7 @@ module.exports = function () {
               loader: 'file-loader',
               options: {
                 outputPath: 'fonts',
+                name: '[name].[ext]',
               },
             },
           ],
