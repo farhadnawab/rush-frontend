@@ -2,6 +2,7 @@ import $ from 'jquery';
 import 'popper.js';
 import './scss/style.scss';
 import 'bootstrap';
+import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 $(() => {
   // Declare local storage
@@ -23,7 +24,7 @@ $(() => {
     container: 'map-wrapper',
     style: lightDarkMode[localStorage.selectedMode], // stylesheet location by default
   });
-  console.log(mapboxgl, map, 'hello');
+  console.log(mapboxgl, map, 'hello2');
 
   // Toggle dark mode
   $('[data-toggle-dark-mode]').on('click', () => {
