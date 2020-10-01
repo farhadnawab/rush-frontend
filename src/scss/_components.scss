@@ -196,6 +196,8 @@
     padding: 0;
     border: 0;
     outline: none;
+    position: relative;
+    z-index: 1;
 
     &[aria-expanded="true"] {
       background: #fff;
@@ -225,8 +227,6 @@
     background: transparent !important;
     padding-left: 1rem;
     padding-right: 1rem;
-    position: relative;
-    z-index: 1;
 
     .navbar-collapse {
       display: flex;
