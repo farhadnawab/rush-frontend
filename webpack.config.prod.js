@@ -31,7 +31,9 @@ const htmlPlugins = generateHtmlPlugins('./src/template/view');
 module.exports = function () {
   return {
     mode: 'production',
-    entry: ['./src/app.js'],
+    entry: [
+      './src/app.js',
+    ],
     output: {
       path: path.resolve(__dirname, 'docs'),
     },
@@ -39,9 +41,6 @@ module.exports = function () {
       minimizer: [
         new OptimizeCSSAssetsPlugin(),
       ],
-      splitChunks: {
-        chunks: 'all',
-      },
     },
     plugins: [
       new CleanWebpackPlugin(['docs']),
