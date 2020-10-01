@@ -2,11 +2,41 @@ import $ from 'jquery';
 import 'popper.js';
 import './scss/style.scss';
 import 'bootstrap';
+import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 $(() => {
+  // Declare local storage
+  if (localStorage.getItem('selectedMode') === null) {
+    localStorage.setItem('selectedMode', 0);
+  }
+  // Presist Dark/light mode
+  if (localStorage.selectedMode === '0') {
+    $('body').removeClass('dark-mode');
+  } else if (localStorage.selectedMode === '1') {
+    $('body').addClass('dark-mode');
+  }
+
+  // Mapbox
+  const lightDarkMode = ['mapbox://styles/sstankov/ckbfigelz17r81jo0saovsd7b', 'mapbox://styles/sstankov/ckbfim3tw45vo1imp2uc5rtyq'];
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic3N0YW5rb3YiLCJhIjoiY2tmZjJ0dnp2MDZkcjJxbGRuNHBkYmUwdyJ9.4s5pHSx2DyuhJJOKChZjDA';
+
+  const map = new mapboxgl.Map({
+    container: 'map-wrapper',
+    style: lightDarkMode[localStorage.selectedMode], // stylesheet location by default
+  });
+
   // Toggle dark mode
   $('[data-toggle-dark-mode]').on('click', () => {
     $('body').toggleClass('dark-mode');
+
+    // update local storage and map style
+    if ($('body').hasClass('dark-mode')) {
+      localStorage.setItem('selectedMode', 1);
+      map.setStyle(lightDarkMode[localStorage.selectedMode]);
+    } else {
+      localStorage.setItem('selectedMode', 0);
+      map.setStyle(lightDarkMode[localStorage.selectedMode]);
+    }
   });
 
   // Accordion
