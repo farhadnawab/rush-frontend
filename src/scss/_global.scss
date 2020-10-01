@@ -124,7 +124,6 @@ h6 {
 
 // Cards
 .card {
-  height: 100%;
   border: 0;
   border-radius: 16px;
   overflow: hidden;
@@ -136,6 +135,8 @@ h6 {
     transition-property: background-color, border-color;
   }
   .card-body {
+    display: flex;
+    flex-direction: column;
     min-height: 0;
   }
 
@@ -278,6 +279,7 @@ h6 {
       flex-direction: column;
     }
     .blocks-wrapper > .block {
+      display: flex;
       flex-shrink: 1;
       pointer-events: auto;
   
@@ -421,7 +423,8 @@ h6 {
   }
 }
 .active .scrollable-wrapper {
-  height: 100%;
+  height: auto;
+  flex-grow: 1;
 
   @include media-breakpoint-down(sm) {
     min-height: 250px;
