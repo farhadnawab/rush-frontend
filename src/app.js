@@ -1,7 +1,9 @@
 import $ from 'jquery';
-import 'popper.js';
+// import 'popper.js';
 import './scss/style.scss';
-import 'bootstrap';
+import 'bootstrap/js/dist/util';
+import 'bootstrap/js/dist/collapse';
+import 'bootstrap/js/dist/dropdown';
 import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 $(() => {
