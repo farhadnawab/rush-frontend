@@ -2,11 +2,29 @@ import $ from 'jquery';
 import 'popper.js';
 import './scss/style.scss';
 import 'bootstrap';
+import mapboxgl from 'mapbox-gl'; // or "const mapboxgl = require('mapbox-gl');"
 
 $(() => {
+  // MapBox
+  const darkMode = 'mapbox://styles/sstankov/ckbfim3tw45vo1imp2uc5rtyq';
+  const lightMode = 'mapbox://styles/sstankov/ckbfigelz17r81jo0saovsd7b';
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic3N0YW5rb3YiLCJhIjoiY2tmZjJ0dnp2MDZkcjJxbGRuNHBkYmUwdyJ9.4s5pHSx2DyuhJJOKChZjDA';
+  const map = new mapboxgl.Map({
+    container: 'map-wrapper',
+    style: lightMode, // stylesheet location
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9, // starting zoom
+  });
+
   // Toggle dark mode
   $('[data-toggle-dark-mode]').on('click', () => {
     $('body').toggleClass('dark-mode');
+
+    if ($('body').hasClass('dark-mode')) {
+      map.setStyle(darkMode);
+    } else {
+      map.setStyle(lightMode);
+    }
   });
 
   // Accordion
