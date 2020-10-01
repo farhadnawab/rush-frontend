@@ -24,6 +24,7 @@ $(() => {
     container: 'map-wrapper',
     style: lightDarkMode[localStorage.selectedMode], // stylesheet location by default
   });
+  console.log(mapboxgl, map);
 
   // Toggle dark mode
   $('[data-toggle-dark-mode]').on('click', () => {
