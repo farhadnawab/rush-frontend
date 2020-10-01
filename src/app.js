@@ -23,7 +23,7 @@ $(() => {
 
   const map = new mapboxgl.Map({
     container: 'map-wrapper',
-    style: lightDarkMode[localStorage.selectedMode], // stylesheet location by default
+    style: `${lightDarkMode[localStorage.selectedMode]}?optimize=true`, // stylesheet location by default
   });
 
   // Toggle dark mode
