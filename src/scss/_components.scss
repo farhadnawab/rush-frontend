@@ -17,6 +17,9 @@
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+    
+    position: relative;
+    z-index: 1;
   }
   // Nav links
   .navbar-nav {
@@ -222,6 +225,8 @@
     background: transparent !important;
     padding-left: 1rem;
     padding-right: 1rem;
+    position: relative;
+    z-index: 1;
 
     .navbar-collapse {
       display: flex;
