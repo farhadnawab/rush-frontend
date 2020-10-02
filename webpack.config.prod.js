@@ -1,5 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
@@ -49,6 +50,9 @@ module.exports = function () {
         chunkFilename: '[id].css',
       }),
       new MinifyPlugin(),
+      new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'defer',
+      }),
       new CopyPlugin({
         patterns: [
           {
