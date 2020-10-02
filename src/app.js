@@ -24,6 +24,7 @@ $(() => {
   const map = new mapboxgl.Map({
     container: 'map-wrapper',
     style: `${lightDarkMode[localStorage.selectedMode]}?optimize=true`, // stylesheet location by default
+    attributionControl: false,
   });
 
   // Toggle dark mode

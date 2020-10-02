@@ -1,5 +1,6 @@
 // Webpack uses this to work with directories
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 // We need Nodes fs module to read directory contents
@@ -51,6 +52,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'defer',
+    }),
   ]
     // We join our htmlPlugin array to the end
     // of our webpack plugins array.
