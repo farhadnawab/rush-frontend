@@ -1,12 +1,12 @@
 const self = this;
 const cacheName = 'rush-web-app';
 const filesToCache = [
-  '/',
-  '/index.html',
-  '/multiple-shipments.html',
-  '/one-shipment.html',
-  '/main.css',
-  '/main.js',
+  './',
+  './index.html',
+  './multiple-shipments.html',
+  './one-shipment.html',
+  './main.css',
+  './main.js',
 ];
 
 self.addEventListener('install', (installEvent) => {
