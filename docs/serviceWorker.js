@@ -13,7 +13,7 @@ self.addEventListener('install', (installEvent) => {
   installEvent.waitUntil(
     caches.open(cacheName).then((cache) => {
       cache.addAll(filesToCache);
-    }),
+    }).catch((err) => console.log(err)),
   );
 });
 
@@ -25,6 +25,8 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(
       event.request, { ignoreSearch: true },
-    ).then((response) => response || fetch(event.request)),
+    )
+      .then((response) => response || fetch(event.request)
+        .catch((err) => console.log(err))),
   );
 });

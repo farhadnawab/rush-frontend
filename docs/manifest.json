@@ -22,6 +22,12 @@
       "src": "/rush-frontend/images/appicons/512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/rush-frontend/images/appicons/192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "/rush-frontend/index.html",
