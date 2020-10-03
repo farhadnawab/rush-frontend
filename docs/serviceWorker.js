@@ -1,12 +1,24 @@
 const self = this;
 const cacheName = 'rush-web-app';
 const filesToCache = [
-  './',
-  './index.html',
-  './multiple-shipments.html',
-  './one-shipment.html',
-  './main.css',
-  './main.js',
+  '/rush-frontend/',
+  '/rush-frontend/index.html',
+  '/rush-frontend/multiple-shipments.html',
+  '/rush-frontend/one-shipment.html',
+  '/rush-frontend/main.css',
+  '/rush-frontend/main.js',
+  '/rush-frontend/fonts/Inter-Bold.woff',
+  '/rush-frontend/fonts/Inter-Bold.woff2',
+  '/rush-frontend/fonts/Inter-Medium.woff',
+  '/rush-frontend/fonts/Inter-Medium.woff2',
+  '/rush-frontend/fonts/Inter-Regular.woff',
+  '/rush-frontend/fonts/Inter-Regular.woff2',
+  '/rush-frontend/fonts/Metropolis-Bold.woff',
+  '/rush-frontend/fonts/Metropolis-Bold.wof2',
+  '/rush-frontend/fonts/Metropolis-Medium.woff',
+  '/rush-frontend/fonts/Metropolis-Medium.wof2',
+  '/rush-frontend/fonts/Metropolis-Regular.woff',
+  '/rush-frontend/fonts/Metropolis-Regular.wof2',
 ];
 
 self.addEventListener('install', (installEvent) => {
