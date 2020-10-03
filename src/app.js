@@ -103,44 +103,44 @@ $(() => {
   $(document).on('click', '.navbar-collapse .dropdown-menu', (e) => {
     e.stopPropagation();
   });
-
-  // Vh height calculation for mobile
-  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-  let vh = window.innerHeight * 0.01;
-  // Then we set the value in the --vh custom property to the root of the document
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-  // We listen to the resize event
-  window.addEventListener('resize', () => {
-    // We execute the same script as before
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-  });
-
-  // Form validation -- Bootstrap way
-  // JavaScript for disabling form submissions if there are invalid fields
-  window.addEventListener('load', () => {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    const validation = Array.prototype.filter.call(forms, (form) => {
-      form.addEventListener('submit', (event) => {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-
-  // Register Service Worker - PWA
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker
-        .register('./serviceWorker.js')
-        .then((res) => console.log('service worker registered', res))
-        .catch((err) => console.log('service worker not registered', err));
-    });
-  }
 });
+
+// Vh height calculation for mobile
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+// We listen to the resize event
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
+// Form validation -- Bootstrap way
+// JavaScript for disabling form submissions if there are invalid fields
+window.addEventListener('load', () => {
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.getElementsByClassName('needs-validation');
+  // Loop over them and prevent submission
+  const validation = Array.prototype.filter.call(forms, (form) => {
+    form.addEventListener('submit', (event) => {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+}, false);
+
+// Register Service Worker - PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/serviceWorker.js')
+      .then((res) => console.log('service worker registered', res))
+      .catch((err) => console.log('service worker not registered', err));
+  });
+}
