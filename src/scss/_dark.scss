@@ -118,3 +118,8 @@ body.dark-mode .notification-wrapper {
     color: $gray-400;
   }
 }
+
+// Product Card
+body.dark-mode .product-card {
+  border-color: $gray-700;
+}
