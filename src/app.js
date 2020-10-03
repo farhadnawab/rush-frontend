@@ -134,13 +134,13 @@ window.addEventListener('load', () => {
     }, false);
   });
 }, false);
-alert('testing alert4!');
+alert('testing alert5!');
 // Register Service Worker - PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('./serviceWorker.js')
-      .then((res) => forceSWupdate())
+      .then((res) => console.log(res))
       .catch((err) => console.log('service worker not registered', err));
   });
 }
