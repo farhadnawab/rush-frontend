@@ -51,7 +51,7 @@ module.exports = function () {
       }),
       new MinifyPlugin(),
       new ScriptExtHtmlWebpackPlugin({
-        defaultAttribute: 'async',
+        defaultAttribute: 'defer',
       }),
       new CopyPlugin({
         patterns: [
