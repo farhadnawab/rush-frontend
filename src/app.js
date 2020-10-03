@@ -138,7 +138,7 @@ $(() => {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('./serviceWorker.js')
+        .register('/rush-frontend/serviceWorker.js')
         .then((res) => console.log('service worker registered', res))
         .catch((err) => console.log('service worker not registered', err));
     });
