@@ -1,4 +1,4 @@
-## Tech Used:
+## Native
 - Html
 - CSS
 - SCSS
