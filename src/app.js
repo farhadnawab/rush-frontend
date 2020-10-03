@@ -134,7 +134,7 @@ window.addEventListener('load', () => {
     }, false);
   });
 }, false);
-alert('testing alert3!');
+alert('testing alert4!');
 // Register Service Worker - PWA
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
