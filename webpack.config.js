@@ -53,7 +53,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer',
+      defaultAttribute: 'async',
     }),
   ]
     // We join our htmlPlugin array to the end
