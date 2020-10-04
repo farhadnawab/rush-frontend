@@ -378,6 +378,10 @@ h6 {
   &.radius-more {
     border-radius: 8px;
   }
+  svg * {
+    color: inherit;
+    fill: currentColor;
+  }
 }
 
 // Accordion arrow change

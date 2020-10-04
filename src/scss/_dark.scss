@@ -65,6 +65,9 @@ body.dark-mode .card {
   .text-gray-900 {
     color: $primary-050 !important;
   }
+  .text-gray-500.dark-primary-050 {
+    color: $primary-050 !important;
+  }
   .text-gray-600 {
     color: $gray-400 !important;
   }
@@ -73,6 +76,9 @@ body.dark-mode .card {
   }
   .footer-actions > a {
     border-color: $gray-700;
+  }
+  .text-primary-900 {
+    color: $gray-500 !important;
   }
 }
 
@@ -107,11 +113,8 @@ body.dark-mode .listing-type-2 .date-box:after {
 // Icons
 body.dark-mode .icon-type-1{
 
-  *{
+  svg *{
     fill: #fff;
-  }
-  &.bg-primary-050 * {
-    stroke: $gray-800;
   }
 } 
 
@@ -128,4 +131,18 @@ body.dark-mode .notification-wrapper {
 // Product Card
 body.dark-mode .product-card {
   border-color: $gray-700;
+}
+
+// Mapbox
+body.dark-mode .mapbox-popup .mapboxgl-popup-content {
+  background: $gray-900;
+  box-shadow: none;
+}
+body.dark-mode .mapbox-popup .mapboxgl-popup-close-button {
+  background-image: url("../images/icons/popup-cancel-dark.svg");
+}
+body.dark-mode .mapbox-marker {
+  #white-area {
+    fill: $gray-900;
+  }
 }

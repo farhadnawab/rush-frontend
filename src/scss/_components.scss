@@ -449,6 +449,68 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     }
   }
 }
+@include media-breakpoint-down(sm) {
+  body.popup-active #map-wrapper {
+    z-index: 12;
+  }
+}
+
+// Map Popup
+.mapbox-marker {
+  cursor: pointer;
+}
+.mapbox-popup {
+  width: 100%;
+  max-height: calc(100% - #{$navbar-height * 3});
+
+  .mapboxgl-popup-tip {
+    display: none;
+  }
+  .mapboxgl-popup-close-button {
+    position: fixed;
+    top: 0;
+    right: -3rem;
+    margin-left: 5px;
+    font-size: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: transparent !important;
+    background-image: url("../images/icons/popup-cancel-light.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+  }
+  .mapboxgl-popup-content {
+    font-family: $font-family-metropolis;
+    font-size: 1rem;
+    overflow: auto;
+    background: #fff;
+    box-shadow: 0px 0px 20px rgba(201, 204, 211, 0.6);
+    border-radius: 16px;
+    min-width: 300px;
+    padding: 0;
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(sm) {
+    transform: none !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: 100%;
+    z-index: 2;
+
+    .mapboxgl-popup-content {
+      border-radius: 0;
+      padding-top: 45px;
+    }
+    .mapboxgl-popup-close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
 
 // Listing Component
 .listing-type-1 {
@@ -475,10 +537,9 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
       border-radius: 100%;
       background: #fff;
       overflow: hidden;
-
-      img {
-        object-fit: contain;
-      }
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
     }
     .product-image-courrier {
       position: absolute;
@@ -486,6 +547,22 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
       right: 0;
       width: 2.5rem;
       height: 2.5rem;
+      border-radius: 100%;
+      background: $gray-050;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image-courrier-2 {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 100%;
+      background: $gray-050;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

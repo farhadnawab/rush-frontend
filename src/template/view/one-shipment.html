@@ -62,10 +62,10 @@
                     <div class="text-gray-500">a.kemalakcay@gmail.com</div>
                   </div>
                   <div class="d-flex ml-2">
-                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 mr-2">
+                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 text-primary-500 mr-2">
                       ${  require('../components/icons/blue-truck.html') }
                     </a>
-                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050">
+                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 text-primary-500">
                       ${  require('../components/icons/blue-document-duplicate.html') }
                     </a>
                   </div>
@@ -76,7 +76,7 @@
                 <div class="listing-type-1 border-2">
                   <div class="product-image align-self-start">
                     <div class="p-image"><img src="/rush-frontend/images/product-2.png" /></div>
-                    <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
+                    <div class="product-image-courrier"><img src="/rush-frontend/images/icons/ups-courrier.png" /></div>
                   </div>
                   <div class="col p-0 font-weight-bold font-metropolis text-truncate">
                     <div class="text-truncate">Title of the shipment</div>
@@ -103,10 +103,10 @@
                           <span class="text-truncate">H&M Special Collection</span>
                           <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
                           <div class="product-image align-self-start">
                             <div class="p-image"><img src="/rush-frontend/images/product-2.png" /></div>
-                            <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
+                            <div class="product-image-courrier"><img src="/rush-frontend/images/icons/ups-courrier.png" /></div>
                           </div>
                           <div class="col p-0 font-weight-bold font-metropolis text-truncate">
                             <div class="d-flex">
@@ -123,10 +123,10 @@
                           <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
                           <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
                           <div class="product-image align-self-start">
                             <div class="p-image"><img src="/rush-frontend/images/product-2.png" /></div>
-                            <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
+                            <div class="product-image-courrier"><img src="/rush-frontend/images/icons/ups-courrier.png" /></div>
                           </div>
                           <div class="col p-0 font-weight-bold font-metropolis text-truncate">
                             <div class="d-flex">
@@ -143,10 +143,10 @@
                           <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
                           <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
                           <div class="product-image align-self-start">
                             <div class="p-image"><img src="/rush-frontend/images/product-2.png" /></div>
-                            <img class="product-image-courrier" src="/rush-frontend/images/icons/ups-courrier.svg" />
+                            <div class="product-image-courrier"><img src="/rush-frontend/images/icons/ups-courrier.png" /></div>
                           </div>
                           <div class="col p-0 font-weight-bold font-metropolis text-truncate">
                             <div class="d-flex">
@@ -341,10 +341,10 @@
                       Have a question about your shipment?
                     </div>
                     <div class="d-flex align-items-center ml-2">
-                      <a href="javascript:void(0)" class="icon-type-1 radius-more bg-primary-500 mr-3">
+                      <a href="javascript:void(0)" class="icon-type-1 bg-primary-500 text-white mr-3">
                         ${  require('../components/icons/white-phone.html') }
                       </a>
-                      <a href="javascript:void(0)" class="icon-type-1 radius-more bg-primary-500">
+                      <a href="javascript:void(0)" class="icon-type-1 bg-primary-500 text-white">
                         ${  require('../components/icons/white-link.html') }
                       </a>
                     </div>
@@ -493,6 +493,9 @@
       </div>
       <!-- Notify - END -->
     </main>
+
+    <!-- Popup - Html -->
+    ${  require('../components/popup-1.html') }
   
   <!-- Register Service worker -->
   <script src='/rush-frontend/regServiceWorker.js'></script>
