@@ -64,6 +64,14 @@ module.exports = function () {
       new CopyPlugin({
         patterns: [
           {
+            from: path.resolve(__dirname, './src/fonts'),
+            to: path.resolve(__dirname, 'docs/fonts'),
+          },
+        ],
+      }),
+      new CopyPlugin({
+        patterns: [
+          {
             from: path.resolve(__dirname, './src/manifest.json'),
             to: path.resolve(__dirname, 'docs/manifest.json'),
           },
