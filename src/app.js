@@ -5,6 +5,7 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/dropdown';
 
+$('.initial-loader').hide();
 $(() => {
   // Declare local storage
   if (localStorage.getItem('selectedMode') === null) {
