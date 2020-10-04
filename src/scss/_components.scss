@@ -450,6 +450,15 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   }
 }
 
+// Map Popup
+.mapbox-popup {
+  max-height: calc(100% - #{$navbar-height * 3});
+
+  .mapboxgl-popup-content {
+    overflow: auto;
+  }
+}
+
 // Listing Component
 .listing-type-1 {
   display: flex;

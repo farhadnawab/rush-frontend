@@ -129,3 +129,10 @@ body.dark-mode .notification-wrapper {
 body.dark-mode .product-card {
   border-color: $gray-700;
 }
+
+// Mapbox
+body.dark-mode .mapbox-marker {
+  #white-area {
+    fill: $gray-900;
+  }
+}
