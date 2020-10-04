@@ -77,6 +77,14 @@ module.exports = function () {
           },
         ],
       }),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/regServiceWorker.js'),
+            to: path.resolve(__dirname, 'docs/regServiceWorker.js'),
+          },
+        ],
+      }),
     ]
     // We join our htmlPlugin array to the end
     // of our webpack plugins array.
