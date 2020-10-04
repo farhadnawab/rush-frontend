@@ -64,14 +64,6 @@ module.exports = function () {
       new CopyPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, './src/fonts'),
-            to: path.resolve(__dirname, 'docs/fonts'),
-          },
-        ],
-      }),
-      new CopyPlugin({
-        patterns: [
-          {
             from: path.resolve(__dirname, './src/manifest.json'),
             to: path.resolve(__dirname, 'docs/manifest.json'),
           },
@@ -103,8 +95,9 @@ module.exports = function () {
           test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
-            'css-loader?url=false',
-            'sass-loader',
+            'css-loader',
+            'resolve-url-loader',
+            'sass-loader?sourceMap',
           ],
         },
         {
@@ -127,7 +120,7 @@ module.exports = function () {
                 name: '[name].[ext]',
               },
             },
-            {
+          /* {
               loader: 'image-webpack-loader',
               options: {
                 mozjpeg: {
@@ -151,7 +144,7 @@ module.exports = function () {
                   quality: 20,
                 },
               },
-            },
+            }, */
           ],
         },
         {
