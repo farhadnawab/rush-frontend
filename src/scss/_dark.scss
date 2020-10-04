@@ -1,6 +1,7 @@
 // Global
 body.dark-mode {
   color: $primary-050;
+  background: $gray-900;
 }
 @include media-breakpoint-down(sm) {
   body.dark-mode .main-container:not(.mobile-layout-1) > .left-column {
@@ -51,6 +52,11 @@ body.dark-mode a.toggle-dark-mode-btn {
     opacity: 1;
   }
 } 
+
+// Initial Loader
+body.dark-mode .initial-loader {
+  background: $gray-900;
+}
 
 // Cards
 body.dark-mode .card {
