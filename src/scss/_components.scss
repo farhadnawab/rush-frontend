@@ -399,7 +399,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   right: 0;
   bottom: 0;
   z-index: 999;
-  background: #fff;
+  background: $gray-900;
 
   img {
     position: absolute;
