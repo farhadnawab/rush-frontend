@@ -33,12 +33,12 @@ body {
 
 // helpers
 .rounded-tl-tr-1rem {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
 }
 .rounded-bl-br-1rem {
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
 }
 
 .leading-inherit {
@@ -56,11 +56,15 @@ body {
 }
 
 // Buttons
-.btn-sm {
+.btn-sm,
+.btn-md {
   line-height: 1.375rem;
   font-size: 1rem;
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
+}
+.btn-md {
+  padding: 0.75rem 1.5rem;
 }
 
 // Checkbox
@@ -188,6 +192,7 @@ h6 {
 
   .footer-actions {
     display: flex;
+    height: 3.5rem;
 
     > a {
       flex: 1;
@@ -204,6 +209,9 @@ h6 {
 
       &:last-child {
         border-right: 0;
+      }
+      &[aria-expanded="true"] {
+        color: $primary-500;
       }
     }
     > a svg {
@@ -418,6 +426,12 @@ h6 {
   &.radius-more {
     border-radius: 8px;
   }
+  svg * {
+    color: inherit;
+    fill: currentColor;
+  }
+}
+.svg-color-inherit {
   svg * {
     color: inherit;
     fill: currentColor;

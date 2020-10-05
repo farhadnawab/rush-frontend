@@ -109,18 +109,20 @@ $(() => {
   });
 
   // Accordion
-  $('.block .collapse').on('show.bs.collapse', (e) => {
+  $('[data-close-others]').on('show.bs.collapse', (e) => {
     e.stopPropagation();
     const $this = $(e.currentTarget);
 
-    $('.blocks-wrapper > .block').removeClass('active');
-    $('.blocks-wrapper > .block .collapse').collapse('hide');
-    $this.closest('.block').addClass('active');
+    if(!$this.closest('.block').hasClass('active')){
+      $('.blocks-wrapper > .block').removeClass('active');
+      $('.blocks-wrapper > .block [data-close-others]').collapse('hide');
+      $this.closest('.block').addClass('active');
+    }
   });
-  $('.block .collapse').on('hide.bs.collapse', (e) => {
+  $('[data-close-others]').on('hide.bs.collapse', (e) => {
     e.stopPropagation();
     const $this = $(e.currentTarget);
-
+    
     $this.closest('.block').removeClass('active');
   });
 
@@ -170,6 +172,30 @@ $(() => {
   $(document).on('click', '.navbar-collapse .dropdown-menu', (e) => {
     e.stopPropagation();
   });
+
+    
+  // Form validation -- Bootstrap way
+  // Loop over them and prevent submission
+  $('.tracking-order-form').submit(function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const isvalidate = $(this)[0].checkValidity();
+
+    $(this).addClass('was-validated');
+
+    if (isvalidate) {
+      $(".tracking-order-form-wrapper").fadeOut(function(){
+        $(".tracking-order-animation-wrapper").fadeIn(function(){
+          setTimeout(() => {
+            $("#tracking-order").fadeOut(function(){
+              $("#multiple-shipments").addClass("active").css("display", "flex").hide().fadeIn();
+            })
+          }, 8000);
+        });
+      });
+    }
+  });
 });
 
 // Vh height calculation for mobile
@@ -185,19 +211,3 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
-// Form validation -- Bootstrap way
-// JavaScript for disabling form submissions if there are invalid fields
-window.addEventListener('load', () => {
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.getElementsByClassName('needs-validation');
-  // Loop over them and prevent submission
-  const validation = Array.prototype.filter.call(forms, (form) => {
-    form.addEventListener('submit', (event) => {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  });
-}, false);

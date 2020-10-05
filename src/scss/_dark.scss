@@ -118,7 +118,7 @@ body.dark-mode .icon-type-1{
   }
 } 
 
-// Notify
+// Notification
 body.dark-mode .notification-wrapper {
   color: #fff;
   background: $gray-900;
@@ -144,5 +144,30 @@ body.dark-mode .mapbox-popup .mapboxgl-popup-close-button {
 body.dark-mode .mapbox-marker {
   #white-area {
     fill: $gray-900;
+  }
+}
+
+// Overlay on card
+body.dark-mode .overlap-dialog {
+
+  &:before {
+    background: $gray-500;
+  }
+}
+
+// Buttons
+body.dark-mode .btn-gray-100.text-gray-700 {
+  border-color: $gray-800 !important;
+  background: $gray-800 !important;
+  color: $primary-050 !important;
+}
+
+// Tracking Order
+body.dark-mode .tracking-order-animation-wrapper.premium-active {
+  .premium-anim.light {
+    display: none;
+  }
+  .premium-anim.dark {
+    display: block;
   }
 }

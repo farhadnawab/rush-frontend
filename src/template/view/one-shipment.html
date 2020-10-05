@@ -96,7 +96,7 @@
               <div class="card-body p-0">
                 <div class="scrollable-wrapper">
                   <div class="scrollable">
-                    <div class="collapse" id="more-shipments">
+                    <div class="collapse" id="more-shipments" data-close-others>
                       <!-- Item 1 -->
                       <div class="listing-type-1 flex-column">
                         <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
@@ -188,7 +188,7 @@
               <div class="card-body p-0">
                 <div class="scrollable-wrapper">
                   <div class="scrollable p-4">
-                    <div class="collapse local-dispatch">
+                    <div class="collapse local-dispatch" data-close-others>
                       <!-- Item 1 -->
                       <div class="listing-type-2">
                         <div class="date-box primary mr-3">
@@ -297,13 +297,86 @@
                     </div>
                   </div>
                 </div>
+                
+                <div id="dialogs">
+                <!-- Notify me -->
+                <div class="collapse overlap-dialog" id="notify-me-dialog" data-parent="#dialogs">
+                  <div class="card rounded-0 rounded-tl-tr-1rem">
+                    <div class="card-body">
+                      <div class="h-100 overflow-auto">
+                      
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h6 class="font-weight-bold text-truncate m-0">
+                            Notification Settings
+                          </h6>
+                          <a href="javascript:void(0)" class="text-gray-900 svg-color-inherit" data-toggle="collapse" data-target="#notify-me-dialog" role="button" aria-expanded="false" aria-controls="notify-me-dialog">
+                            ${  require('../components/icons/close.html') }
+                          </a>
+                        </div>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-gray-700 btn-block d-flex align-items-center mt-3">
+                          <div class="svg-color-inherit text-primary-500 mr-2">
+                            ${  require('../components/icons/mail.html') }
+                          </div> Notify via E-mail
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-gray-700 btn-block d-flex align-items-center mt-2">
+                          <div class="svg-color-inherit text-primary-500 mr-2">
+                            ${  require('../components/icons/chat-alt.html') }
+                          </div> Notify via SMS
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-gray-700 btn-block d-flex align-items-center mt-2">
+                          <div class="mr-2">
+                            <img src="/images/icons/fb-white.png" />
+                          </div> Notify via Facebook
+                        </a>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-primary-500 text-white btn-block mt-3">
+                          Notification Management
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Notify me - END -->
+
+                <!-- Options -->
+                <div class="collapse overlap-dialog" id="options-dialog" data-parent="#dialogs">
+                  <div class="card rounded-0 rounded-tl-tr-1rem">
+                    <div class="card-body">
+                      <div class="h-100 overflow-auto">
+                      
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h6 class="font-weight-bold text-truncate m-0">
+                            Delivery Options
+                          </h6>
+                          <a href="javascript:void(0)" class="text-gray-900 svg-color-inherit" data-toggle="collapse" data-target="#options-dialog" role="button" aria-expanded="false" aria-controls="options-dialog">
+                            ${  require('../components/icons/close.html') }
+                          </a>
+                        </div>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-secondary-050 text-secondary-500 btn-block mt-4">
+                          Forward to nearest office
+                        </a>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-danger-light text-white btn-block mt-2">
+                          Cancel Delivery
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Options - END -->
+                </div>
+
               </div>
-              <div class="collapse local-dispatch">
+              <div class="collapse local-dispatch" data-close-others>
                 <div class="footer-actions bg-primary-050">
-                  <a href="javascript:void(0)">
+                  <a href="javascript:void(0)" data-toggle="collapse" data-target="#notify-me-dialog" role="button" aria-expanded="false" aria-controls="notify-me-dialog">
                     ${  require('../components/icons/black-bell.html') } Notify me
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="javascript:void(0)" data-toggle="collapse" data-target="#options-dialog" role="button" aria-expanded="false" aria-controls="options-dialog">
                     ${  require('../components/icons/black-settings.html') } Options
                   </a>
                 </div>
@@ -329,7 +402,7 @@
                 </a>
               </div> 
               <div class="card-body flex-grow-0 p-0">
-                <div class="collapse hm-paris">
+                <div class="collapse hm-paris" data-close-others>
                   <!-- Item 1 -->
                   <div class="listing-type-1 flex-column leading-1-4">
                     Paris, France · In Hashtag<br/>
@@ -354,7 +427,7 @@
               <div class="card-body p-0">
                 <div class="scrollable-wrapper">
                   <div class="scrollable p-4">
-                    <div class="collapse hm-paris">
+                    <div class="collapse hm-paris" data-close-others>
                       <h6 class="font-metropolis font-weight-bold mb-3">
                         Related to your order
                       </h6>
@@ -460,7 +533,7 @@
                   </div>
                 </div>
               </div>
-              <div class="collapse hm-paris">
+              <div class="collapse hm-paris" data-close-others>
                 <div class="footer-actions bg-primary-050">
                   <a href="javascript:void(0)" class="btn btn-primary-500 text-white btn-block rounded-0">
                     Go to Shop
