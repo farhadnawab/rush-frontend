@@ -458,6 +458,23 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 // Map Popup
 .mapbox-marker {
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all ease 0.3s;
+
+  svg {
+    width: 100%;
+    transition: all ease 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    max-width: 6rem;
+  }
 }
 .mapbox-popup {
   width: 100%;
