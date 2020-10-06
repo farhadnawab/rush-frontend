@@ -721,6 +721,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   }
 
   @include media-breakpoint-down(sm) {
+    position: fixed;
     bottom: auto;
     right: auto;
     top: 0;
@@ -778,7 +779,6 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
       font-weight: bold;
       font-size: 0.75rem;
       line-height: 1;
-      z-index: 1;
     }
   }
   .product-card-summary {
@@ -801,7 +801,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  z-index: 1;
+  z-index: 2;
   transition-property: height, background-color, border-color !important;
 
   &:before {
@@ -814,6 +814,8 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     background: $gray-900;
     opacity: 0.8;
     z-index: -1;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
   }
   &.show {
     height: calc(100% - 3.5rem);
@@ -822,9 +824,13 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   @include media-breakpoint-down(sm) {
     position: fixed;
     bottom: 0;
+    z-index: 2;
 
     &.show {
       height: 100%;
+    }
+    .card .card-body {
+      padding-bottom: 2.5rem;
     }
   }
 }

@@ -71,7 +71,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card-body flex-grow-0 p-0 bg-primary-050 rounded-tl-tr-1rem rounded-bl-br-1rem">
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 stick-to-top" id="shipments-header">
                 <!-- Item 1 -->
                 <div class="listing-type-1 border-2">
                   <div class="product-image align-self-start">
@@ -84,13 +84,11 @@
                   </div>
                 </div>
                 <!-- More button -->
-                <div class="listing-type-1 py-2">
-                  <a class="font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#more-shipments" role="button" aria-expanded="false" aria-controls="more-shipments">
-                    <span class="text-truncate">+3 more shipments</span>
-                    <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
-                    <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
-                  </a>
-                </div>
+                <a class="listing-type-1 py-2 font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#more-shipments" role="button" aria-expanded="false" aria-controls="more-shipments" data-scroll-to="#shipments-header">
+                  <span class="text-truncate">+3 more shipments</span>
+                  <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
+                  <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
+                </a>
 
               </div>
               <div class="card-body p-0">
@@ -170,20 +168,18 @@
           <div class="block mt-1">
             <!-- Card -->
             <div class="card card-size-1">
-              <div class="card-body flex-grow-0 p-3 bg-primary-050 rounded-bl-br-1rem">
-                <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 stick-to-top" id="local-dispatch-header">
+                <a class="p-3 font-weight-bold font-metropolis d-flex align-items-center justify-content-between no-link" href="javascript:void(0)" data-toggle="collapse" data-target=".local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch" data-scroll-to="#local-dispatch-header">
                   <button class="btn btn-primary-100 text-primary-500 text-sm" type="submit">Local Dispatch</button>
                   <div class="flex-grow-1 text-truncate text-sm ml-3">
                     <div class="text-gray-600 text-truncate">Expected Delivery</div>
                     08 June 2020
                   </div>
                   <div class="ml-2">
-                    <a href="javascript:void(0)" data-toggle="collapse" data-target=".local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch">
-                      <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
-                      <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
-                    </a>
+                    <img class="collapsed" src="/rush-frontend/images/icons/orange-arrow-circle-down.svg" />
+                    <img class="expanded" src="/rush-frontend/images/icons/orange-arrow-circle-up.svg" />
                   </div>
-                </div>
+                </a>
               </div>
               <div class="card-body p-0">
                 <div class="scrollable-wrapper">
@@ -301,7 +297,7 @@
                 <div id="dialogs">
                 <!-- Notify me -->
                 <div class="collapse overlap-dialog" id="notify-me-dialog" data-parent="#dialogs">
-                  <div class="card rounded-0 rounded-tl-tr-1rem">
+                  <div class="card rounded-0 rounded-tl-tr-1rem max-height-100">
                     <div class="card-body">
                       <div class="h-100 overflow-auto">
                       
@@ -342,7 +338,7 @@
 
                 <!-- Options -->
                 <div class="collapse overlap-dialog" id="options-dialog" data-parent="#dialogs">
-                  <div class="card rounded-0 rounded-tl-tr-1rem">
+                  <div class="card rounded-0 rounded-tl-tr-1rem max-height-100">
                     <div class="card-body">
                       <div class="h-100 overflow-auto">
                       
@@ -371,14 +367,16 @@
                 </div>
 
               </div>
-              <div class="collapse local-dispatch" data-close-others>
-                <div class="footer-actions bg-primary-050">
-                  <a href="javascript:void(0)" data-toggle="collapse" data-target="#notify-me-dialog" role="button" aria-expanded="false" aria-controls="notify-me-dialog">
-                    ${  require('../components/icons/black-bell.html') } Notify me
-                  </a>
-                  <a href="javascript:void(0)" data-toggle="collapse" data-target="#options-dialog" role="button" aria-expanded="false" aria-controls="options-dialog">
-                    ${  require('../components/icons/black-settings.html') } Options
-                  </a>
+              <div class="card-body flex-grow-0 rounded-tl-tr-0 p-0 stick-to-bottom">
+                <div class="collapse local-dispatch stick-to-bottom" data-close-others>
+                  <div class="footer-actions bg-primary-050">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#notify-me-dialog" role="button" aria-expanded="false" aria-controls="notify-me-dialog">
+                      ${  require('../components/icons/black-bell.html') } Notify me
+                    </a>
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#options-dialog" role="button" aria-expanded="false" aria-controls="options-dialog">
+                      ${  require('../components/icons/black-settings.html') } Options
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -390,8 +388,8 @@
           <div class="block mt-1">
             <!-- Card -->
             <div class="card card-size-1">
-              <div class="card-body flex-grow-0 p-3 bg-primary-050 rounded-bl-br-1rem">
-                <a href="javascript:void(0)" class="text-decoration-none text-gray-900 d-flex align-items-center justify-content-between" data-toggle="collapse" data-target=".hm-paris" role="button" aria-expanded="false" aria-controls="hm-paris">
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 stick-to-top" id="hm-paris-header">
+                <a href="javascript:void(0)" class="text-decoration-none text-gray-900 d-flex align-items-center justify-content-between p-3" data-toggle="collapse" data-target=".hm-paris" role="button" aria-expanded="false" aria-controls="hm-paris" data-scroll-to="#hm-paris-header">
                   <h6 class="flex-grow-1 d-flex align-items-center text-truncate m-0 font-weight-bold font-metropolis">
                     <img class="mr-2" src="/rush-frontend/images/hm-paris.png" /> H&M Paris
                   </h6>
@@ -424,7 +422,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card-body p-0">
+              <div class="card-body rounded-0 p-0">
                 <div class="scrollable-wrapper">
                   <div class="scrollable p-4">
                     <div class="collapse hm-paris" data-close-others>
@@ -533,11 +531,13 @@
                   </div>
                 </div>
               </div>
-              <div class="collapse hm-paris" data-close-others>
-                <div class="footer-actions bg-primary-050">
-                  <a href="javascript:void(0)" class="btn btn-primary-500 text-white btn-block rounded-0">
-                    Go to Shop
-                  </a>
+              <div class="card-body flex-grow-0 rounded-tl-tr-0 p-0 stick-to-bottom">
+                <div class="collapse hm-paris" data-close-others>
+                  <div class="footer-actions bg-primary-050">
+                    <a href="javascript:void(0)" class="btn btn-primary-500 text-white btn-block rounded-0">
+                      Go to Shop
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
