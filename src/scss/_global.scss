@@ -265,7 +265,7 @@ h6 {
   top: 0;
   z-index: 1;
 }
-.stick-to-bottom {
+.stick-to-bottom.active {
   position: sticky;
   bottom: 0;
   z-index: 1;
@@ -525,6 +525,8 @@ h6 {
   }
 
   @include media-breakpoint-down(sm) {
+    height: auto;
+
     > .scrollable {
       position: static;
     }

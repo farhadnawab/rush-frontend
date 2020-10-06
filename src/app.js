@@ -109,22 +109,24 @@ $(() => {
   });
 
   // Accordion
-  $('[data-close-others]').on('show.bs.collapse', (e) => {
-    e.stopPropagation();
-    const $this = $(e.currentTarget);
+  if(window.matchMedia("(min-width: 768px)").matches){
+    $('[data-close-others]').on('show.bs.collapse', (e) => {
+      e.stopPropagation();
+      const $this = $(e.currentTarget);
 
-    if(!$this.closest('.block').hasClass('active')){
-      $('.blocks-wrapper > .block').removeClass('active');
-      $('.blocks-wrapper > .block [data-close-others]').collapse('hide');
-      $this.closest('.block').addClass('active');
-    }
-  });
-  $('[data-close-others]').on('hide.bs.collapse', (e) => {
-    e.stopPropagation();
-    const $this = $(e.currentTarget);
-    
-    $this.closest('.block').removeClass('active');
-  });
+      if(!$this.closest('.block').hasClass('active')){
+        $('.blocks-wrapper > .block').removeClass('active');
+        $('.blocks-wrapper > .block [data-close-others]').collapse('hide');
+        $this.closest('.block').addClass('active');
+      }
+    });
+    $('[data-close-others]').on('hide.bs.collapse', (e) => {
+      e.stopPropagation();
+      const $this = $(e.currentTarget);
+      
+      $this.closest('.block').removeClass('active');
+    });
+  }
 
   // Notify
   $('.notification-wrapper').on('click', (e) => {
@@ -135,7 +137,7 @@ $(() => {
 
     // For Mobile
     if (window.matchMedia('(max-width: 768px)') && $this.hasClass('active')) {
-      $('.main-container').not('.mobile-layout-1').animate({
+      $('html, body').animate({
         scrollTop: 0,
       });
     }
@@ -181,6 +183,21 @@ $(() => {
       scrollTop: $($this.attr("data-scroll-to")).offset().top
     });
   })
+  // Fix stick to bottom relative to top
+  $(document).on('scroll', (e) => {
+    const $this = $(e.currentTarget);
+    
+    $('.stick-to-top').each(function(){
+      const $footerDiv = $(this).closest(".card").find('.stick-to-bottom');
+
+      if($this.scrollTop() >= ($(this).closest(".card").offset().top - 2)) {
+        $footerDiv.addClass("active");
+      } else {
+        $footerDiv.removeClass("active");
+      }
+    });
+  });
+  
 
     
   // Form validation -- Bootstrap way
