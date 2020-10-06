@@ -173,6 +173,15 @@ $(() => {
     e.stopPropagation();
   });
 
+  // Mobile scrolling
+  $('[data-scroll-to]').on('click', (e) => {
+    const $this = $(e.currentTarget);
+    
+    $('html, body').animate({
+      scrollTop: $($this.attr("data-scroll-to")).offset().top
+    });
+  })
+
     
   // Form validation -- Bootstrap way
   // Loop over them and prevent submission
@@ -189,7 +198,7 @@ $(() => {
         $(".tracking-order-animation-wrapper").fadeIn(function(){
           setTimeout(() => {
             $("#tracking-order").fadeOut(function(){
-              $("#multiple-shipments").addClass("active").css("display", "flex").hide().fadeIn();
+              $("#multiple-shipments").css("display", "flex").hide().fadeIn();
             })
           }, 8000);
         });
