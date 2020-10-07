@@ -411,7 +411,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 
 // Map
 #map-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
