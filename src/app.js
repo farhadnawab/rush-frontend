@@ -137,7 +137,7 @@ $(() => {
 
     // For Mobile
     if (window.matchMedia('(max-width: 768px)') && $this.hasClass('active')) {
-      $(".main-wrapper").animate({
+      $('html, body').animate({
         scrollTop: 0,
       });
     }
@@ -179,12 +179,12 @@ $(() => {
   $('[data-scroll-to]').on('click', (e) => {
     const $this = $(e.currentTarget);
     
-    $(".main-wrapper").animate({
+    $('html, body').animate({
       scrollTop: $($this.attr("data-scroll-to")).offset().top
     });
   })
   // Fix stick to bottom relative to top
-  $(".main-wrapper").on('scroll', (e) => {
+  $(document).on('scroll', (e) => {
     const $this = $(e.currentTarget);
     
     $('.stick-to-top').each(function(){
@@ -237,3 +237,6 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
+window.addEventListener('touchend', _ => {
+  window.scrollTo(0,0)
+});
