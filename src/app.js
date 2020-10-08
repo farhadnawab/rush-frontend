@@ -196,7 +196,12 @@ $(() => {
         $footerDiv.removeClass("active");
       }
     });
+
+    // elastic scroll hack
+    $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $this.scrollTop());
   });
+  // trigger on load (elastic scroll hack)
+  $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $(document).scrollTop());
   
 
     
