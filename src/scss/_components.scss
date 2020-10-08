@@ -880,8 +880,10 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     }
   }
 }
-.block:not(.active) .overlap-dialog {
-  display: none !important;
+@include media-breakpoint-up(sm){
+  .block:not(.active) .overlap-dialog {
+    display: none !important;
+  }
 }
 
 // Tracking Order
