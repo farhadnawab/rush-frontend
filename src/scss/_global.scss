@@ -427,6 +427,16 @@ h6 {
           background: #D0D5DB;
           border-radius: 5px;
         }
+        .ios-elastic-scroll-hack {
+          background: inherit;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 10000px;
+          z-index: -1;
+          margin-top: 40px;
+        }
         .blocks-wrapper{
           padding-top: 1.5rem;
           padding-left: 0.5rem;
