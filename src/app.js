@@ -198,10 +198,17 @@ $(() => {
     });
 
     // elastic scroll hack
-    $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $this.scrollTop());
+    if($(".ios-elastic-scroll-hack").length > 0)
+      $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $this.scrollTop());
   });
   // trigger on load (elastic scroll hack)
-  $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $(document).scrollTop());
+  if($(".ios-elastic-scroll-hack").length > 0)
+    $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $(document).scrollTop());
+  $(window).resize(function() {
+    // trigger on resize (elastic scroll hack)
+    if($(".ios-elastic-scroll-hack").length > 0)
+      $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $(document).scrollTop());
+  }); 
   
 
     
