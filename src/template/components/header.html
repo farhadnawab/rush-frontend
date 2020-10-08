@@ -256,6 +256,16 @@
             </div>
           </div>
         </li>
+        <li class="nav-item d-none d-md-flex">
+          <a class="nav-link" href="#">Terms of Service</a>
+        </li>
+        <li class="nav-item d-none d-md-flex">
+          <a class="nav-link" href="#">Privacy Policy</a>
+        </li>
+      </ul>
+
+      <!-- Mobile bottom links -->
+      <ul class="header-bottom-links d-md-none d-flex">
         <li class="nav-item">
           <a class="nav-link" href="#">Terms of Service</a>
         </li>
@@ -265,14 +275,12 @@
       </ul>
 
       <!-- Dark/Light -->
-      <div class="mt-6 mt-md-0">
-        <a href="javascript:void(0)" class="toggle-dark-mode-btn" data-toggle-dark-mode>
-          <!-- Light Mode -->
-          ${  require('../components/icons/light-mode-switcher.html') }
-          <!-- Dark Mode -->
-          ${  require('../components/icons/dark-mode-switcher.html') }
-        </a>
-      </div>
+      <a href="javascript:void(0)" class="toggle-dark-mode-btn mt-6 mt-md-0" data-toggle-dark-mode>
+        <!-- Light Mode -->
+        ${  require('../components/icons/light-mode-switcher.html') }
+        <!-- Dark Mode -->
+        ${  require('../components/icons/dark-mode-switcher.html') }
+      </a>
       
     </div>
   </div>

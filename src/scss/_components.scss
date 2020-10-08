@@ -222,6 +222,27 @@
       display: none;
     }
   }
+  
+  // Bottom links (mobile)
+  .header-bottom-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    
+    a.nav-link {
+      font-family: $font-family-metropolis;
+      font-weight: bold;
+      font-size: 1rem;
+      color: $primary-500;
+    }
+  }
+  
 
   @include media-breakpoint-down(sm) {
     background: transparent !important;
@@ -265,6 +286,12 @@
       }
       &.dropdown-active {
         display: block;
+
+        .header-bottom-links,
+        .toggle-dark-mode-btn,
+        .navbar-nav > li:not(.show) {
+          display: none !important;
+        }
       }
 
       .navbar-nav {
