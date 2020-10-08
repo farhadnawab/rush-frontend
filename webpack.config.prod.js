@@ -97,6 +97,7 @@ module.exports = function () {
             MiniCssExtractPlugin.loader,
             'css-loader',
             'resolve-url-loader',
+            'postcss-loader',
             'sass-loader?sourceMap',
           ],
         },
