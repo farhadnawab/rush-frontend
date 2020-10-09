@@ -667,6 +667,38 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
       transition: inherit;
     }
   }
+  .date-box.circle {
+    background: transparent !important;
+
+    span {
+      border-radius: 100%;
+      background: $gray-050;
+      width: 0.75rem;
+      height: 0.75rem;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      transform: translateY(-50%);
+
+      &:before, &:after {
+        content: "";
+        width: 2px;
+        height: 150%;
+        background: inherit;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      &:after {
+        bottom: auto;
+        top: 100%;
+      }
+    }
+  }
 }
 
 /* Notification */
