@@ -1,5 +1,10 @@
 // Header
 .navbar {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex-direction: column;
   background: $gray-050;
   height: $navbar-height;
   padding: 0;
@@ -7,6 +12,64 @@
   padding-right: 3rem;
   transition: all ease 0.5s;
   z-index: 11;
+
+  // Promotional Alert
+  .promotional-alert {
+    height: $promotional-alert-height;
+    line-height: $promotional-alert-height;
+    margin-left: -3rem;
+    margin-right: -3rem;
+    background: $primary-050;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      @include h5;
+      font-weight: bold;
+      font-family: $font-family-metropolis;
+      color: $gray-900;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 169px;
+        height: 190px;
+        pointer-events: none;
+      }
+      &:before {
+        background-image: url("../images/icons/confetti-l.png");
+        right: 100%;
+      }
+      &:after {
+        background-image: url("../images/icons/confetti-r.png");
+        left: 100%;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 1.25rem;
+
+        &:before {
+          right: 95%;
+        }
+        &:after {
+          left: 95%;
+        }
+      }
+    }
+    .content .text {
+      @include text-truncate;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
 
   // Logo
   .navbar-brand {
@@ -29,7 +92,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: $navbar-height;
+      height: $navbar-content-height;
       margin-right: 3rem;
       position: relative;
 
@@ -506,7 +569,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 }
 .mapbox-popup {
   width: 100%;
-  max-height: calc(100% - #{$navbar-height * 3});
+  max-height: calc(100% - #{$navbar-height} * 3);
 
   .mapboxgl-popup-tip {
     display: none;
