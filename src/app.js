@@ -189,6 +189,7 @@ $(() => {
   $(document).on('scroll', (e) => {
     const $this = $(e.currentTarget);
     
+    // sticky header and footer of cards
     $('.stick-to-top').each(function(){
       const $footerDiv = $(this).closest(".card").find('.stick-to-bottom');
 
@@ -206,14 +207,19 @@ $(() => {
   // trigger on load (elastic scroll hack)
   if($(".ios-elastic-scroll-hack").length > 0)
     $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $(document).scrollTop());
-  $(window).resize(function() {
+  $(window).on('resize', () => {
     // trigger on resize (elastic scroll hack)
     if($(".ios-elastic-scroll-hack").length > 0)
       $(".ios-elastic-scroll-hack").css("top", $(".left-column").offset().top - $(document).scrollTop());
   }); 
-  
 
-    
+  // scroll to active card on mobile
+  if(window.matchMedia('(max-width: 768px)')){
+    $('html, body').animate({
+      scrollTop: $(".main-container > .left-column .blocks-wrapper > .block.active").offset().top
+    });
+  }
+  
   // Form validation -- Bootstrap way
   // Loop over them and prevent submission
   $('.tracking-order-form').submit(function(event) {

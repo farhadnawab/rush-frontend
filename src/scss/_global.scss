@@ -371,6 +371,9 @@ h6 {
         flex-grow: 1;
       }
     }
+    .blocks-wrapper.not-stretched > .block.active {
+      flex-grow: 0;
+    }
   }
   
 
@@ -406,7 +409,7 @@ h6 {
         border-bottom-right-radius: 0;
         background: #fff;
         width: 100%;
-        top: 80%;
+        top: 88%;
         pointer-events: auto;
 
         /*&::-webkit-scrollbar {
