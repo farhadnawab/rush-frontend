@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Seo -->
+    <meta name="Description" content="Rush Web App - PWA">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- ios support -->
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/appicons/128x128.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/appicons/144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/appicons/152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/appicons/192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/appicons/512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#0085ff" />
+    <meta name="theme-color" content="#0085ff" />
+
+    <title>Rush Web App</title>
+  </head>
+  <body>
+    
+    <!-- Loader -->
+    <div class="initial-loader">
+      <img src="/images/initial_loader.svg" />
+    </div>
+    
+    <!-- Header -->
+    ${ require('../components/header.html') }
+
+    <!-- Main Content -->
+    <main class="main-container" role="main">
+      
+      <!-- Map -->
+      <div id="map-wrapper"></div>
+
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Elastic scroll hack -->
+        <div class="ios-elastic-scroll-hack"></div>
+        
+        <!-- Block Wrapper -->
+        <div class="blocks-wrapper not-stretched">
+          
+          <!-- Block -->
+          <div class="block active">
+            <!-- Pointer element -->
+            <div id="hm-paris-header"></div>
+            <!-- Pointer element END -->
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-0">
+                <a href="javascript:void(0)" class="text-decoration-none text-gray-900 d-flex align-items-center justify-content-between p-3" data-toggle="collapse" data-target=".hm-paris" role="button" aria-expanded="true" aria-controls="hm-paris" data-scroll-to="#hm-paris-header">
+                  <h6 class="flex-grow-1 d-flex align-items-center text-truncate m-0 font-weight-bold font-metropolis">
+                    <img class="mr-2" src="/images/hm-paris.png" /> H&M Paris
+                  </h6>
+                  <div class="ml-2">
+                    <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                    <img class="expanded" width="20" src="/images/popup-cancel-light.svg" />
+                  </div>
+                </a>
+              </div> 
+              <div class="card-body flex-grow-0 p-0">
+                <div class="show hm-paris" data-close-others>
+                  <!-- Item 1 -->
+                  <div class="listing-type-1 flex-column pt-0 leading-1-4">
+                    Paris, France · In Hashtag<br/>
+                    Paris Open ⋅ Closes 8:30PM · +33 805 0
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="listing-type-1 flex-column leading-1-4">
+                    <div class="font-weight-bold font-metropolis">
+                      Have a question about your shipment?
+                    </div>
+                    <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-primary-500 btn-block d-flex align-items-center mt-3">
+                      <div class="svg-color-inherit mr-2">
+                        ${  require('../components/icons/white-phone.html') }
+                      </div> +01 221 402 0334
+                    </a>
+                    <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-primary-500 btn-block d-flex align-items-center mt-2">
+                      <div class="svg-color-inherit mr-2">
+                        ${  require('../components/icons/white-link.html') }
+                      </div> upscargo.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+        </div>
+        <!-- Block Wrapper - END -->
+      </div>
+      <!-- Left Column - END -->
+
+      <!-- Notify -->
+      <div class="notification-wrapper">
+        <div class="notification">
+          <a href="javascript:void(0)" class="notification-close">
+            <img src="/images/icons/gray-x-circle.svg" />
+          </a>
+          <div class="notification-icon">
+            ${  require('../components/icons/white-info.html') }
+          </div>
+          <div class="notification-text">
+            <b class="notification-title">Merchant's Note</b>
+            <div class="notification-description leading-1-4">Shipments may be delayed from 8 Jun to 18 Jun because of the upcoming Chinese new year.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Notify - END -->
+    </main>
+
+    <!-- Popup 1 - Html -->
+    ${  require('../components/popup-1.html') }
+    
+    <!-- Popup 2 - Html -->
+    ${  require('../components/popup-2.html') }
+    
+    <!-- Popup 3 - Html -->
+    ${  require('../components/popup-3.html') }
+    
+    <!-- Popup 4 - Html -->
+    ${  require('../components/popup-4.html') }
+  
+  <!-- Register Service worker -->
+  <script src='/regServiceWorker.js'></script>
+
+  <!-- Mapbox -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js' defer></script>
+  </body>
+</html>

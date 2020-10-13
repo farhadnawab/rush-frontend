@@ -162,6 +162,11 @@ body.dark-mode .btn-gray-100.text-gray-700 {
   background: $gray-800 !important;
   color: $primary-050 !important;
 }
+body.dark-mode .btn-gray-100.text-primary-500 {
+  border-color: $gray-800 !important;
+  background: $gray-800 !important;
+  color: $primary-500 !important;
+}
 
 // Tracking Order
 body.dark-mode .tracking-order-animation-wrapper.premium-active {
