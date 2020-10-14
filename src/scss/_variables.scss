@@ -162,6 +162,6 @@ $navbar-height: var(--navbar-height);
 body {
   --navbar-height: #{$navbar-content-height};
 }
-body.has-promotional-alert {
+body.has-promotional-alert:not(.navbar-active) {
   --navbar-height: #{$navbar-content-height + $promotional-alert-height};
 }

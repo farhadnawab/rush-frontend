@@ -51,11 +51,30 @@
       @include media-breakpoint-down(sm) {
         font-size: 1.25rem;
 
+        .btn {
+          font-size: inherit;
+        }
         &:before {
           right: 95%;
         }
         &:after {
           left: 95%;
+        }
+      }
+      @include media-breakpoint-down(xs) {
+        font-size: 1rem;
+      }
+      @include media-breakpoint-down(xxs) {
+        font-size: 0.875rem;
+      }
+      @include media-breakpoint-down(xxxs) {
+        font-size: 0.75rem;
+        
+        &:before {
+          right: 90%;
+        }
+        &:after {
+          left: 90%;
         }
       }
     }
@@ -71,6 +90,13 @@
     }
   }
 
+  .navbar-content {
+    @extend .d-flex;
+    @extend .justify-content-between;
+    @extend .align-items-center;
+    @extend .flex-grow-1;
+    @extend .navbar-expand-md;
+  }
   // Logo
   .navbar-brand {
     @include h4;
@@ -422,6 +448,10 @@
 }
 body.navbar-active .navbar {
   z-index: 12;
+
+  .promotional-alert {
+    display: none !important;
+  }
 }
 
 
