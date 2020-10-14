@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="main-menu">
       <ul class="navbar-nav">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown01" data-toggle="dropdown">
             <span class="arrow">
               ${  require('../components/icons/arrow-circle-left.html') }
             </span>
@@ -96,7 +96,7 @@
           <!-- Dropdown - END -->
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown02" data-toggle="dropdown">
             <span class="arrow">
               ${  require('../components/icons/arrow-circle-left.html') }
             </span>
@@ -221,34 +221,35 @@
           <!-- Dropdown - END -->
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown03" data-toggle="dropdown">
             <span class="arrow">
               ${  require('../components/icons/arrow-circle-left.html') }
             </span>
             <span class="d-md-none mr-3">Change Language</span>
             ${  require('../components/icons/lang-menu-item.html') }
           </a>
+          <!-- Dropdown -->
           <div class="dropdown-menu" aria-labelledby="dropdown03">
             <div class="dropdown-content">
               <!-- Card -->
               <div class="scrollable-wrapper px-2">
                 <div class="scrollable">
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="javascript:void(0)">
                     <img src="/images/icons/uk-flag.png" class="mr-2 w-2 h-2" /> English (UK)
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="javascript:void(0)">
                     <img src="/images/icons/usa-flag.png" class="mr-2 w-2 h-2" /> English (USA)
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="javascript:void(0)">
                     <img src="/images/icons/bulgaria-flag.png" class="mr-2 w-2 h-2" /> българия
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="javascript:void(0)">
                     <img src="/images/icons/germany-flag.png" class="mr-2 w-2 h-2" /> Deutsche
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="javascript:void(0)">
                     <img src="/images/icons/turkey-flag.png" class="mr-2 w-2 h-2" /> Türkçe
                   </a>
-                  <a class="dropdown-item" href="#">
+                  <a class="dropdown-item" href="javascript:void(0)">
                     <img src="/images/icons/france-flag.png" class="mr-2 w-2 h-2" /> Française
                   </a>
                 </div>
@@ -256,21 +257,130 @@
               <!-- Card - END -->
             </div>
           </div>
+          <!-- Dropdown - END -->
+        </li>
+        <!-- *Desktop Specific -->
+        <li class="nav-item d-none d-md-flex">
+          <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#termsModal">Terms of Service</a>
         </li>
         <li class="nav-item d-none d-md-flex">
-          <a class="nav-link" href="#">Terms of Service</a>
+          <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a>
         </li>
-        <li class="nav-item d-none d-md-flex">
-          <a class="nav-link" href="#">Privacy Policy</a>
+        <!-- *Desktop Specific - END -->
+        <!-- *Mobile Specific -->
+        <li class="nav-item dropdown d-md-none" id="terms-service-mobile">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+            <span class="arrow">
+              ${  require('../components/icons/arrow-circle-left.html') }
+            </span>
+            <span class="d-md-none mr-3">Terms of Service</span>
+          </a>
+          <!-- Dropdown -->
+          <div class="dropdown-menu">
+            <div class="dropdown-content px-0">
+              <!-- Card -->
+              <div class="card card-size-2 rounded-0">
+                <div class="card-body p-0">
+                  <div class="scrollable-wrapper">
+                    <div class="scrollable">
+                      <p>
+                        Lorem ipsum.....
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card - END -->
+            </div>
+          </div>
+          <!-- Dropdown - END -->
+        </li>
+        <li class="nav-item dropdown d-md-none" id="privacy-policy-mobile">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
+            <span class="arrow">
+              ${  require('../components/icons/arrow-circle-left.html') }
+            </span>
+            <span class="d-md-none mr-3">Privacy Policy</span>
+          </a>
+          <!-- Dropdown -->
+          <div class="dropdown-menu">
+            <div class="dropdown-content px-0">
+              <!-- Card -->
+              <div class="card card-size-2 rounded-0">
+                <div class="card-body p-0">
+                  <div class="scrollable-wrapper">
+                    <div class="scrollable">
+                      <p>
+                        A Privacy Policy is a legal statement that specifies what the business owner does with the personal data collected from users, along with how the data is processed and for what purposes.
+                      </p>
+                      <p>
+                        In 1968, Council of Europe did studies on the threat of the Internet expansion as they were concerned with the effects of technology on human rights. This lead to the development of policies that were to be developed to protect personal data.
+                      </p>
+                      <p>
+                        This marks the start of what we know now as a "Privacy Policy." While the name "Privacy Policy" refers to the legal agreement, the concept of privacy and protecting user data is closely related.
+                      </p>
+                      <p>
+                        This agreement can also be known under these names:
+                      </p>
+                      <p>
+                        &nbsp;&nbsp;&nbsp;Privacy Statement<br/>
+                        &nbsp;&nbsp;&nbsp;Privacy Notice<br/>
+                        &nbsp;&nbsp;&nbsp;Privacy Information
+                      </p>
+                      <p>
+                        A Privacy Policy can be used for both your website and mobile app if it's adapted to include the platforms your business operates on.
+                      </p>
+                      <p>
+                        There are two main reasons why you need a Privacy Policy:
+                      </p>
+                      <p>
+                        ✓ They're legally required: Privacy Policies are legally required by global privacy laws if you collect or use personal information.
+                      </p>
+                      <p>
+                        ✓ Consumers expect to see them: Place your Privacy Policy link in your website footer, and anywhere else where you request personal information.
+                      </p>
+                      <p>
+                        Excerpt from TermsFeed Testimonials:
+                      </p>
+                      <p>
+                        "<i>
+                          I needed an updated Privacy Policy for my website with GDPR coming up. I didn't want to try and write one myself, so TermsFeed was really helpful. I figured it was worth the cost for me, even though I'm a small fry and don't have a big business. Thanks for making it easy.
+                        </i>"
+                      </p>  
+                      <p>
+                        &nbsp;&nbsp;&nbsp;Stephanie P.<br/>
+                        &nbsp;&nbsp;&nbsp;Generated a Privacy Policy
+                      </p>
+                      <p>
+                        Generate a Privacy Policy, 2020 up-to-date, for your business (web, mobile and others) with the Privacy Policy Generator from TermsFeed.
+                      </p>
+                      <p>
+                        The requirements for Privacy Policies may differ from one country to another depending on the legislation. However, most privacy laws identify the following critical points that a business must comply with when dealing with personal data:
+                      </p>
+                      <p>
+                        &nbsp;&nbsp;&nbsp;Notice - Data collectors must clearly disclose what they are doing with the personal information from users before collecting it.<br/>
+                        &nbsp;&nbsp;&nbsp;Choice - The companies collecting the data must respect the choices of users on what information they choose to provide.<br/>
+                        &nbsp;&nbsp;&nbsp;Access - Users should be able to view, update or request the removal of personal data collected by the company.<br/>
+                        &nbsp;&nbsp;&nbsp;Security - Companies are entirely responsible for the accuracy and security (keeping it properly away from unauthorized eyes and hands) of the collected personal information.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card - END -->
+            </div>
+          </div>
+          <!-- Dropdown - END -->
         </li>
         <li class="nav-item dropdown d-md-none">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdown05" data-toggle="dropdown">
             <span class="arrow">
               ${  require('../components/icons/arrow-circle-left.html') }
             </span>
             <span class="d-md-none mr-3">Direct Links</span>
           </a>
-          <div class="dropdown-menu" aria-labelledby="dropdown03">
+          <!-- Dropdown -->
+          <div class="dropdown-menu" aria-labelledby="dropdown05">
             <div class="dropdown-content">
               <!-- Card -->
               <div class="scrollable-wrapper px-2">
@@ -313,16 +423,18 @@
               <!-- Card - END -->
             </div>
           </div>
+          <!-- Dropdown - END -->
         </li>
+        <!-- *Mobile Specific - END -->
       </ul>
 
       <!-- Mobile bottom links -->
       <ul class="header-bottom-links d-md-none d-flex">
         <li class="nav-item">
-          <a class="nav-link" href="#">Terms of Service</a>
+          <a class="nav-link" href="#terms-service-mobile" data-open-dropdown>Terms of Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Privacy Policy</a>
+          <a class="nav-link" href="#privacy-policy-mobile" data-open-dropdown>Privacy Policy</a>
         </li>
       </ul>
 

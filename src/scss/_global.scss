@@ -112,6 +112,48 @@ body {
   }
 }
 
+// Switch
+.custom-switch {
+  $switch-w: 3.125rem;
+  $switch-h: 1.875rem;
+  padding-left: $switch-w;
+
+  .custom-control-input {
+    width: $switch-w;
+    height: $switch-h;
+    cursor: pointer;
+  }
+  .custom-control-label {
+    cursor: pointer;
+  }
+  .custom-control-label::before {
+    left: -$switch-w;
+    width: $switch-w;
+    height: $switch-h;
+    pointer-events: all;
+    border-radius: 36.5px;
+    background-color: transparent !important;
+    border-color: $success !important;
+    box-shadow: none !important;
+  }
+  .custom-control-input:checked ~ .custom-control-label::before {
+    color: #fff;
+    border-color: $success !important;
+    background-color: $success !important;
+  }
+  .custom-control-label::after {
+    top: calc(0.25rem + 2px);
+    left: calc(-#{$switch-w} + 2px);
+    width: 1.625rem;
+    height: calc(#{$switch-h} - 4px);
+    background-color: $success;
+    border-radius: 100px;
+  }
+  .custom-control-input:checked ~ .custom-control-label::after {
+    transform: translateX(1.3rem);
+  }
+}
+
 
 // Typography
 @mixin h1 {

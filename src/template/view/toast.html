@@ -31,24 +31,25 @@
 
     <title>Rush Web App</title>
   </head>
-  <body class="has-promotional-alert">
+  <body>
     
     <!-- Loader -->
     <div class="initial-loader">
       <img src="/images/initial_loader.svg" />
     </div>
+
+    <!-- Toast -->
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="6000">      
+      <div class="toast-body">
+        Link has been copied!
+        <span class="text-success-light svg-color-inherit ml-1">
+          ${ require('../components/icons/check-circle.html') }
+        </span>
+      </div>
+    </div>
     
     <!-- Header -->
     <nav class="navbar fixed-top">
-      <!-- Promotional Alert -->
-      <div class="promotional-alert">
-        <div class="content">
-          <div class="text">
-            Annual Sale <span class="text-primary-500">%30 Off</span> on all orders <a href="javascript:void(0)" class="btn btn-sm btn-primary-500 leading-1 ml-2 ml-sm-3">Check it now</a>
-          </div>
-        </div>
-      </div>
-      
       ${ require('../components/header.html') }
     </nav>
 

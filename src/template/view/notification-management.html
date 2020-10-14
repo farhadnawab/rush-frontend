@@ -31,7 +31,7 @@
 
     <title>Rush Web App</title>
   </head>
-  <body class="has-promotional-alert">
+  <body>
     
     <!-- Loader -->
     <div class="initial-loader">
@@ -40,15 +40,6 @@
     
     <!-- Header -->
     <nav class="navbar fixed-top">
-      <!-- Promotional Alert -->
-      <div class="promotional-alert">
-        <div class="content">
-          <div class="text">
-            Annual Sale <span class="text-primary-500">%30 Off</span> on all orders <a href="javascript:void(0)" class="btn btn-sm btn-primary-500 leading-1 ml-2 ml-sm-3">Check it now</a>
-          </div>
-        </div>
-      </div>
-      
       ${ require('../components/header.html') }
     </nav>
 
@@ -219,6 +210,9 @@
       </div>
       <!-- Notify - END -->
     </main>
+
+    <!-- Terms Modal -->
+    ${  require('../components/notification-management-modal.html') }
 
     <!-- Terms Modal -->
     ${  require('../components/terms-modal.html') }
