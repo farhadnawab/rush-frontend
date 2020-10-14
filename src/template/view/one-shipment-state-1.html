@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Seo -->
+    <meta name="Description" content="Rush Web App - PWA">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- ios support -->
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/appicons/128x128.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/appicons/144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/appicons/152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/appicons/192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/appicons/512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#0085ff" />
+    <meta name="theme-color" content="#0085ff" />
+
+    <title>Rush Web App</title>
+  </head>
+  <body>
+    
+    <!-- Loader -->
+    <div class="initial-loader">
+      <img src="/images/initial_loader.svg" />
+    </div>
+    
+    <!-- Header -->
+    <nav class="navbar fixed-top">
+      ${ require('../components/header.html') }
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container" role="main">
+      
+      <!-- Map -->
+      <div id="map-wrapper"></div>
+
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Elastic scroll hack -->
+        <div class="ios-elastic-scroll-hack"></div>
+        
+        <!-- Block Wrapper -->
+        <div class="blocks-wrapper">
+          <!-- Block -->
+          <div class="block active">
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-3">
+                <div class="font-weight-bold font-metropolis d-flex align-items-center justify-content-between">
+                  <div class="text-truncate">
+                    Order for
+                    <div class="text-gray-500">a.kemalakcay@gmail.com</div>
+                  </div>
+                  <div class="d-flex ml-2">
+                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 text-primary-500 mr-2">
+                      ${  require('../components/icons/blue-truck.html') }
+                    </a>
+                    <a href="javascript:void(0)" class="icon-type-1 bg-primary-050 text-primary-500">
+                      ${  require('../components/icons/blue-document-duplicate.html') }
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- Pointer element -->
+              <div id="shipments-header"></div>
+              <!-- Pointer element END -->
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 stick-to-top">
+                <!-- Item 1 -->
+                <div class="listing-type-1 border-2">
+                  <div class="product-image align-self-start">
+                    <div class="p-image"><img src="/images/product-2.png" /></div>
+                    <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                  </div>
+                  <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                    <div class="text-truncate">Title of the shipment</div>
+                    <div class="text-gray-500 text-truncate">#1423412445</div>
+                  </div>
+                </div>
+                <!-- More button -->
+                <a class="listing-type-1 py-2 font-weight-bold font-metropolis w-100 d-flex align-items-center justify-content-between text-secondary-500 text-decoration-none" data-toggle="collapse" href="#more-shipments" role="button" aria-expanded="true" aria-controls="more-shipments" data-scroll-to="#shipments-header">
+                  <span class="text-truncate">+3 more shipments</span>
+                  <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                  <img class="expanded" src="/images/icons/orange-arrow-circle-up.svg" />
+                </a>
+
+              </div>
+              <div class="card-body p-0">
+                <div class="scrollable-wrapper">
+                  <div class="scrollable">
+                    <div class="show" id="more-shipments" data-close-others>
+                      <!-- Item 1 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">H&M Special Collection</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 2 -->
+                      <div class="listing-type-1 flex-column bg-primary-100">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 3 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 4 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">H&M Special Collection</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 5 -->
+                      <div class="listing-type-1 flex-column bg-primary-100">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 6 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 7 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">H&M Special Collection</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 8 -->
+                      <div class="listing-type-1 flex-column bg-primary-100">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Item 9 -->
+                      <div class="listing-type-1 flex-column">
+                        <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                          <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
+                          <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between">
+                          <div class="product-image align-self-start">
+                            <div class="p-image"><img src="/images/product-2.png" /></div>
+                            <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                          </div>
+                          <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                            <div class="d-flex">
+                              <div class="text-truncate">UPS Cargo</div>
+                              <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                            </div>
+                            <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Shipments END -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+          
+          <!-- Block -->
+          <div class="block mt-1">
+            <!-- Pointer element -->
+            <div id="local-dispatch-header"></div>
+            <!-- Pointer element END -->
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 stick-to-top">
+                <a class="p-3 font-weight-bold font-metropolis d-flex align-items-center justify-content-between no-link" href="javascript:void(0)" data-toggle="collapse" data-target=".local-dispatch" role="button" aria-expanded="false" aria-controls="local-dispatch" data-scroll-to="#local-dispatch-header">
+                  <button class="btn btn-primary-100 text-primary-500 text-sm" type="submit">Local Dispatch</button>
+                  <div class="flex-grow-1 text-truncate text-sm ml-3">
+                    <div class="text-gray-600 text-truncate">Expected Delivery</div>
+                    08 June 2020
+                  </div>
+                  <div class="ml-2">
+                    <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                    <img class="expanded" src="/images/icons/orange-arrow-circle-up.svg" />
+                  </div>
+                </a>
+              </div>
+              <div class="card-body p-0">
+                <div class="scrollable-wrapper">
+                  <div class="scrollable">
+                    <div class="collapse local-dispatch p-4" data-close-others>
+                      <!-- Item 1 -->
+                      <div class="listing-type-2">
+                        <div class="date-box primary mr-3">
+                          11<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Delivery</b>
+                          <div class="text-gray-500 text-xs font-inter">Delivered at the mailbox</div>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 2 -->
+                      <div class="listing-type-2">
+                        <div class="date-box circle mr-3">
+                          <span></span>
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Local Dispatch</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 3 -->
+                      <div class="listing-type-2">
+                        <div class="date-box danger mr-3">
+                          08<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Arrived to Country</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 4 -->
+                      <div class="listing-type-2">
+                        <div class="date-box warning mr-3">
+                          05<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>in Transit</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 5 -->
+                      <div class="listing-type-2">
+                        <div class="date-box success mr-3">
+                          04<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Arrived to Country</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 6 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          03<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>in Transit</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 7 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          02<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Pick-up</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 8 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          02<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Pick-up</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 9 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          01<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Registery</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 10 -->
+                      <div class="listing-type-2">
+                        <div class="date-box primary mr-3">
+                          11<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Local Dispatch</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 11 -->
+                      <div class="listing-type-2">
+                        <div class="date-box danger mr-3">
+                          08<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Arrived to Country</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 12 -->
+                      <div class="listing-type-2">
+                        <div class="date-box warning mr-3">
+                          05<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>in Transit</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 13 -->
+                      <div class="listing-type-2">
+                        <div class="date-box success mr-3">
+                          04<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Arrived to Country</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 14 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          03<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>in Transit</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 15 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          02<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Pick-up</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 16 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          02<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Pick-up</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Item 17 -->
+                      <div class="listing-type-2">
+                        <div class="date-box mr-3">
+                          01<br />Jun
+                        </div>
+                        <div class="col p-0 align-self-center font-metropolis">
+                          <b>Registery</b>
+                        </div>
+                        <div class="text-right text-gray-500 text-sm leading-inherit ml-2">
+                          2:30 PM GMT+3<br/>
+                          İzmir, Turkey
+                        </div>
+                      </div>
+                      <!-- Dispatch END -->
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="dialogs">
+                <!-- Notify me -->
+                <div class="collapse overlap-dialog" id="notify-me-dialog" data-parent="#dialogs">
+                  <div class="card rounded-0 rounded-tl-tr-1rem max-height-100">
+                    <div class="card-body">
+                      <div class="h-100 overflow-auto">
+                      
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h6 class="font-weight-bold text-truncate m-0">
+                            Notification Settings
+                          </h6>
+                          <a href="javascript:void(0)" class="text-gray-900 svg-color-inherit" data-toggle="collapse" data-target="#notify-me-dialog" role="button" aria-expanded="false" aria-controls="notify-me-dialog">
+                            ${  require('../components/icons/close.html') }
+                          </a>
+                        </div>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-gray-700 btn-block d-flex align-items-center mt-3">
+                          <div class="svg-color-inherit text-primary-500 mr-2">
+                            ${  require('../components/icons/mail.html') }
+                          </div> Notify via E-mail
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-gray-700 btn-block d-flex align-items-center mt-2">
+                          <div class="svg-color-inherit text-primary-500 mr-2">
+                            ${  require('../components/icons/chat-alt.html') }
+                          </div> Notify via SMS
+                        </a>
+                        <a href="javascript:void(0)" class="btn btn-md btn-gray-100 text-gray-700 btn-block d-flex align-items-center mt-2">
+                          <div class="mr-2">
+                            <img src="/images/icons/fb-white.png" />
+                          </div> Notify via Facebook
+                        </a>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-primary-500 text-white btn-block mt-3">
+                          Notification Management
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Notify me - END -->
+
+                <!-- Options -->
+                <div class="collapse overlap-dialog" id="options-dialog" data-parent="#dialogs">
+                  <div class="card rounded-0 rounded-tl-tr-1rem max-height-100">
+                    <div class="card-body">
+                      <div class="h-100 overflow-auto">
+                      
+                        <div class="d-flex align-items-center justify-content-between">
+                          <h6 class="font-weight-bold text-truncate m-0">
+                            Delivery Options
+                          </h6>
+                          <a href="javascript:void(0)" class="text-gray-900 svg-color-inherit" data-toggle="collapse" data-target="#options-dialog" role="button" aria-expanded="false" aria-controls="options-dialog">
+                            ${  require('../components/icons/close.html') }
+                          </a>
+                        </div>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-secondary-050 text-secondary-500 btn-block mt-4">
+                          Forward to nearest office
+                        </a>
+
+                        <a href="javascript:void(0)" class="btn btn-md btn-danger-light text-white btn-block mt-2">
+                          Cancel Delivery
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Options - END -->
+                </div>
+
+              </div>
+              <div class="card-body flex-grow-0 rounded-tl-tr-0 p-0 stick-to-bottom">
+                <div class="collapse local-dispatch" data-close-others>
+                  <div class="footer-actions bg-primary-050">
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#notify-me-dialog" role="button" aria-expanded="false" aria-controls="notify-me-dialog">
+                      ${  require('../components/icons/black-bell.html') } Notify me
+                    </a>
+                    <a href="javascript:void(0)" data-toggle="collapse" data-target="#options-dialog" role="button" aria-expanded="false" aria-controls="options-dialog">
+                      ${  require('../components/icons/black-settings.html') } Options
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+
+          <!-- Block -->
+          <div class="block mt-1">
+            <!-- Pointer element -->
+            <div id="hm-paris-header"></div>
+            <!-- Pointer element END -->
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-0 bg-primary-050 stick-to-top">
+                <a href="javascript:void(0)" class="text-decoration-none text-gray-900 d-flex align-items-center justify-content-between p-3" data-toggle="collapse" data-target=".hm-paris" role="button" aria-expanded="false" aria-controls="hm-paris" data-scroll-to="#hm-paris-header">
+                  <h6 class="flex-grow-1 d-flex align-items-center text-truncate m-0 font-weight-bold font-metropolis">
+                    <img class="mr-2" src="/images/hm-paris.png" /> H&M Paris
+                  </h6>
+                  <div class="ml-2">
+                    <img class="collapsed" src="/images/icons/orange-arrow-circle-down.svg" />
+                    <img class="expanded" src="/images/icons/orange-arrow-circle-up.svg" />
+                  </div>
+                </a>
+              </div> 
+              <div class="card-body flex-grow-0 p-0">
+                <div class="collapse hm-paris" data-close-others>
+                  <!-- Item 1 -->
+                  <div class="listing-type-1 flex-column leading-1-4">
+                    Paris, France · In Hashtag<br/>
+                    Paris Open ⋅ Closes 8:30PM · +33 805 0
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="listing-type-1 last-border leading-1-4">
+                    <div class="font-weight-bold font-metropolis">
+                      Have a question about your shipment?
+                    </div>
+                    <div class="d-flex align-items-center ml-2">
+                      <a href="javascript:void(0)" class="icon-type-1 bg-primary-500 text-white mr-3">
+                        ${  require('../components/icons/white-phone.html') }
+                      </a>
+                      <a href="javascript:void(0)" class="icon-type-1 bg-primary-500 text-white">
+                        ${  require('../components/icons/white-link.html') }
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body rounded-0 p-0">
+                <div class="scrollable-wrapper">
+                  <div class="scrollable p-4">
+                    <div class="collapse hm-paris" data-close-others>
+                      <h6 class="font-metropolis font-weight-bold mb-3">
+                        Related to your order
+                      </h6>
+                      <!-- Row 1 -->
+                      <div class="d-flex mb-2">
+                        <!-- Item 1 -->
+                        <div class="product-card mr-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product1.png')">
+                            <div class="product-card-discount bg-danger-light text-white">
+                              -40%
+                            </div>
+                          </div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Slim Straight Cropped Jeans
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <strike class="text-gray-500 mr-2">$69.99</strike>
+                              <span class="text-danger-light">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="product-card ml-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product2.png')"></div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Shoulder Bag Men
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <span class="text-gray-500">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Row 2 -->
+                      <div class="d-flex mb-2">
+                        <!-- Item 1 -->
+                        <div class="product-card mr-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product1.png')">
+                            <div class="product-card-discount bg-danger-light text-white">
+                              -40%
+                            </div>
+                          </div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <strike class="text-gray-500 mr-2">$69.99</strike>
+                              <span class="text-danger-light">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="product-card ml-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product2.png')"></div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <span class="text-gray-500">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Row 3 -->
+                      <div class="d-flex mb-2">
+                        <!-- Item 1 -->
+                        <div class="product-card mr-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product1.png')">
+                            <div class="product-card-discount bg-danger-light text-white">
+                              -40%
+                            </div>
+                          </div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <strike class="text-gray-500 mr-2">$69.99</strike>
+                              <span class="text-danger-light">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="product-card ml-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product2.png')"></div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <span class="text-gray-500">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Row 4 -->
+                      <div class="d-flex mb-2">
+                        <!-- Item 1 -->
+                        <div class="product-card mr-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product1.png')">
+                            <div class="product-card-discount bg-danger-light text-white">
+                              -40%
+                            </div>
+                          </div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Slim Straight Cropped Jeans
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <strike class="text-gray-500 mr-2">$69.99</strike>
+                              <span class="text-danger-light">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="product-card ml-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product2.png')"></div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Shoulder Bag Men
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <span class="text-gray-500">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Row 5 -->
+                      <div class="d-flex mb-2">
+                        <!-- Item 1 -->
+                        <div class="product-card mr-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product1.png')">
+                            <div class="product-card-discount bg-danger-light text-white">
+                              -40%
+                            </div>
+                          </div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <strike class="text-gray-500 mr-2">$69.99</strike>
+                              <span class="text-danger-light">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="product-card ml-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product2.png')"></div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <span class="text-gray-500">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Row 6 -->
+                      <div class="d-flex mb-2">
+                        <!-- Item 1 -->
+                        <div class="product-card mr-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product1.png')">
+                            <div class="product-card-discount bg-danger-light text-white">
+                              -40%
+                            </div>
+                          </div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <strike class="text-gray-500 mr-2">$69.99</strike>
+                              <span class="text-danger-light">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="product-card ml-1">
+                          <div class="product-card-image" style="background-image: url('/images/related-product2.png')"></div>
+                          <div class="product-card-summary">
+                            <div class="text-truncate text-xs mb-1">
+                              Fila Women's Disrupt Lorem ipsum
+                            </div>
+                            <div class="text-sm d-flex align-items-end flex-grow-1">
+                              <span class="text-gray-500">$69.99</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body flex-grow-0 rounded-tl-tr-0 p-0 stick-to-bottom">
+                <div class="collapse hm-paris" data-close-others>
+                  <div class="footer-actions bg-primary-050">
+                    <a href="javascript:void(0)" class="btn btn-primary-500 text-white btn-block rounded-0">
+                      Go to Shop
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+        </div>
+        <!-- Block Wrapper - END -->
+      </div>
+      <!-- Left Column - END -->
+
+      <!-- Notify -->
+      <div class="notification-wrapper">
+        <div class="notification">
+          <a href="javascript:void(0)" class="notification-close">
+            <img src="/images/icons/gray-x-circle.svg" />
+          </a>
+          <div class="notification-icon">
+            ${  require('../components/icons/white-info.html') }
+          </div>
+          <div class="notification-text">
+            <b class="notification-title">Merchant's Note</b>
+            <div class="notification-description leading-1-4">Shipments may be delayed from 8 Jun to 18 Jun because of the upcoming Chinese new year.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Notify - END -->
+    </main>
+
+    <!-- Popup 1 - Html -->
+    ${  require('../components/popup-1.html') }
+    
+    <!-- Popup 2 - Html -->
+    ${  require('../components/popup-2.html') }
+    
+    <!-- Popup 3 - Html -->
+    ${  require('../components/popup-3.html') }
+    
+    <!-- Popup 4 - Html -->
+    ${  require('../components/popup-4.html') }
+  
+  <!-- Register Service worker -->
+  <script src='/regServiceWorker.js'></script>
+
+  <!-- Mapbox -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js' defer></script>
+  </body>
+</html>

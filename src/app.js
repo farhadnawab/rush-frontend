@@ -222,6 +222,13 @@ $(() => {
       });
     }
   }
+
+  // Remember me
+  $('#remember-me-block .close-btn, #remember-me-btn, #remember-me-not-btn').on('click', (e) => {
+    const $this = $(e.currentTarget);
+    
+    $('#remember-me-block').hide();
+  })
   
   // Form validation -- Bootstrap way
   // Loop over them and prevent submission

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Seo -->
+    <meta name="Description" content="Rush Web App - PWA">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico">
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- ios support -->
+    <link rel="apple-touch-icon" sizes="128x128" href="/images/appicons/128x128.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/appicons/144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/appicons/152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/appicons/192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/appicons/512x512.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#0085ff" />
+    <meta name="theme-color" content="#0085ff" />
+
+    <title>Rush Web App</title>
+  </head>
+  <body>
+    
+    <!-- Loader -->
+    <div class="initial-loader">
+      <img src="/images/initial_loader.svg" />
+    </div>
+    
+    <!-- Header -->
+    <nav class="navbar fixed-top">
+      ${ require('../components/header.html') }
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-container mobile-layout-1" role="main">
+      
+      <!-- Map -->
+      <div id="map-wrapper"></div>
+
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Block Wrapper -->
+        <div class="blocks-wrapper">
+          <!-- Block -->
+          <div class="block" id="tracking-order">
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body px-4 py-4-5">
+                <div class="tracking-order-form-wrapper">
+                  <form class="tracking-order-form" novalidate>
+                    <h4 class="font-weight-bold text-gray-900 mb-3 font-metropolis">Track Your Order Live</h4>
+                    <div class="font-weight-medium text-gray-600 mb-4">Enter your tracking code, e-mail address or phone number</div>
+
+                    <input type="email" id="inputEmail" class="form-control text-box-variant-1" placeholder="E-mail, tracking code or phone number" required />
+                    <div class="invalid-feedback">
+                      Error message will be here
+                    </div>
+                    
+                    <button class="btn btn-primary-500 btn-block mt-3" type="submit">Track Order</button>
+                    <button class="btn btn-link btn-block font-weight-bold text-primary-500 mt-1" type="button">Need help?</button>
+                  </form>
+                </div>
+                <div class="tracking-order-animation-wrapper text-center">
+                  <h6 class="font-weight-bold text-gray-900 mb-1 font-metropolis text-truncate">Tracking Orders</h6>
+                  <div class="font-weight-medium text-gray-600 mb-4 text-truncate">a.kemalakcay@gmail.com</div>
+
+                  <!-- Animation - Free (by default) -->
+                  <lottie-player src="/images/lottie/free.json" class="free-anim" background="transparent" speed="1" loop autoplay></lottie-player>
+
+                  <!-- Animation - PremiumLight -->
+                  <lottie-player src="/images/lottie/premiumOnLight.json" class="premium-anim light" background="transparent" speed="1" loop autoplay></lottie-player>
+                  
+                  <!-- Animation - PremiumDark -->
+                  <lottie-player src="/images/lottie/premiumOnDark.json" class="premium-anim dark" background="transparent" speed="1" loop autoplay></lottie-player>
+                </div>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+          <!-- Block -->
+          <div class="block" id="multiple-shipments">
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body flex-grow-0 p-3 bg-primary-050 rounded-bl-br-0">
+                <h4 class="font-weight-bold text-gray-900 mb-3 font-metropolis d-flex align-items-center">
+                  <a href="javascript:void(0)">
+                    <img src="/images/icons/blue-arrow-circle-left.svg" class="mr-2" />
+                  </a>
+                  <div class="text-truncate">Select one to track</div>
+                </h4>
+                <p class="text-gray-600 font-weight-medium mb-0">
+                  We have found 2 different shipments coming to your way.
+                </p>
+              </div>
+              <div class="card-body rounded-0 p-0">
+                <div class="auto-scroll-1">
+                    <!-- Item 1 -->
+                    <div class="listing-type-1 flex-column">
+                      <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                        <span class="text-truncate">H&M Special Collection</span>
+                        <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="product-image">
+                          <div class="p-image"><img src="/images/product-2.png" /></div>
+                          <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                        </div>
+                        <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                          <div class="d-flex">
+                            <div class="text-truncate">UPS Cargo</div>
+                            <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                          </div>
+                          <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                        </div>
+                        <div class="ml-2">
+                          <a href="./one-shipment.html">
+                            <img src="/images/icons/blue-arrow-circle-right.svg" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="listing-type-1 flex-column">
+                      <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                        <span class="text-truncate">Hooded Long-Sleeve Fleece</span>
+                        <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="product-image">
+                          <div class="p-image"><img src="/images/product-2.png" /></div>
+                          <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                        </div>
+                        <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                          <div class="d-flex">
+                            <div class="text-truncate">UPS Cargo</div>
+                            <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                          </div>
+                          <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                        </div>
+                        <div class="ml-2">
+                          <a href="./one-shipment.html">
+                            <img src="/images/icons/blue-arrow-circle-right.svg" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="listing-type-1 flex-column">
+                      <div class="font-weight-bold font-metropolis d-flex justify-content-between mb-3">
+                        <span class="text-truncate">Long-Sleeve Fleece Sweatshirt</span>
+                        <span class="text-gray-500 flex-shrink-0 ml-3">10 June</span>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-between">
+                        <div class="product-image">
+                          <div class="p-image"><img src="/images/product-2.png" /></div>
+                          <div class="product-image-courrier"><img src="/images/icons/ups-courrier.png" /></div>
+                        </div>
+                        <div class="col p-0 font-weight-bold font-metropolis text-truncate">
+                          <div class="d-flex">
+                            <div class="text-truncate">UPS Cargo</div>
+                            <div class="text-gray-500 text-truncate flex-shrink-0">&nbsp;- #1423412445</div>
+                          </div>
+                          <div class="text-primary-500 text-truncate">ETA: Jun 16 ‘20</div>
+                        </div>
+                        <div class="ml-2">
+                          <a href="./one-shipment.html">
+                            <img src="/images/icons/blue-arrow-circle-right.svg" />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+          <!-- Block -->
+          <div class="block remember-me mt-md-3" id="remember-me-block">
+            <!-- Card -->
+            <div class="card card-size-1">
+              <div class="card-body px-4 py-4-5 text-center text-gray-900">
+                <a href="javascript:void(0)" class="close-btn no-link">
+                  ${  require('../components/icons/close.html') }
+                </a>
+                <h6 class="font-weight-bold mb-3 font-metropolis">
+                  Remember
+                </h6>
+                <div class="font-weight-medium">
+                  Do you want us to remember your e-mail for next time?
+                </div>
+                
+                <button class="btn btn-primary-500 btn-block mt-3" type="button" id="remember-me-btn">Remember</button>
+                <button class="btn btn-link btn-block font-weight-bold text-primary-500 mt-1" type="button" id="remember-me-not-btn">Do not remember</button>
+              </div>
+            </div>
+            <!-- Card - END -->
+          </div>
+          <!-- Block - END -->
+        </div>
+        <!-- Block Wrapper - END -->
+      </div>
+      <!-- Left Column - END -->
+
+      <!-- Notify -->
+      <div class="notification-wrapper">
+        <div class="notification">
+          <a href="javascript:void(0)" class="notification-close">
+            <img src="/images/icons/gray-x-circle.svg" />
+          </a>
+          <div class="notification-icon">
+            ${  require('../components/icons/white-info.html') }
+          </div>
+          <div class="notification-text">
+            <b class="notification-title">Merchant's Note</b>
+            <div class="notification-description leading-1-4">Shipments may be delayed from 8 Jun to 18 Jun because of the upcoming Chinese new year.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Notify - END -->
+    </main>
+
+    <!-- Popup 1 - Html -->
+    ${  require('../components/popup-1.html') }
+    
+    <!-- Popup 2 - Html -->
+    ${  require('../components/popup-2.html') }
+    
+    <!-- Popup 3 - Html -->
+    ${  require('../components/popup-3.html') }
+    
+    <!-- Popup 4 - Html -->
+    ${  require('../components/popup-4.html') }
+  
+  <!-- Register Service worker -->
+  <script src='/regServiceWorker.js'></script>
+
+  <!-- Mapbox -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js' defer></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>
