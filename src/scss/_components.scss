@@ -1201,11 +1201,11 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 .toast {
   top: $navbar-height;
   position: absolute;
+  z-index: 12;
   left: 0;
   right: 0;
   max-width: 100%;
   margin: 10px auto 0;
-  z-index: 1;
   background: transparent;
   border: 0;
   box-shadow: none;
@@ -1220,5 +1220,11 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     background: #FFFFFF;
     border-radius: 50px;
     padding: 0.75rem 1.5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    top: $navbar-content-height / 2;
+    margin-top: 0;
+    transform: translateY(-50%);
   }
 }
