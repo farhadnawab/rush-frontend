@@ -31,7 +31,7 @@
 
     <title>Rush Web App</title>
   </head>
-  <body>
+  <body class="has-promotional-alert">
     
     <!-- Loader -->
     <div class="initial-loader">
@@ -40,6 +40,15 @@
     
     <!-- Header -->
     <nav class="navbar fixed-top">
+      <!-- Promotional Alert -->
+      <div class="promotional-alert">
+        <div class="content">
+          <div class="text">
+            Spend <span class="text-primary-500">$50</span> to get <span class="text-primary-500">free shipping!</span>
+          </div>
+        </div>
+      </div>
+
       ${ require('../components/header.html') }
     </nav>
 
@@ -224,7 +233,7 @@
     ${  require('../components/popup-4.html') }
   
   <!-- Register Service worker -->
-  <script src='/rush-frontend/regServiceWorker.js'></script>
+  <script src='/regServiceWorker.js'></script>
 
   <!-- Mapbox -->
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />

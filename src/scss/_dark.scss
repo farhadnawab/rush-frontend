@@ -24,6 +24,16 @@ body.dark-mode .navbar {
     color: #fff;
   }
 
+  .promotional-alert {
+    background: $gray-800;
+  }
+  .promotional-alert .content {
+    color: #fff;
+  }
+  .promotional-alert .text-primary-500 {
+    color: $success-light !important;
+  }
+
   @include media-breakpoint-down(sm) {
 
     .navbar-collapse {

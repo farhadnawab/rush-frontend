@@ -215,9 +215,12 @@ $(() => {
 
   // scroll to active card on mobile
   if(window.matchMedia('(max-width: 768px)')){
-    $('html, body').animate({
-      scrollTop: $(".main-container > .left-column .blocks-wrapper > .block.active").offset().top
-    });
+
+    if($(".main-container > .left-column .blocks-wrapper > .block.active").length > 0){
+      $('html, body').animate({
+        scrollTop: $(".main-container > .left-column .blocks-wrapper > .block.active").offset().top
+      });
+    }
   }
   
   // Form validation -- Bootstrap way
@@ -256,3 +259,15 @@ window.addEventListener('resize', () => {
   vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
+
+var rem = function rem() {
+  var html = document.getElementsByTagName('html')[0];
+
+  return function () {
+      return parseInt(window.getComputedStyle(html)['fontSize']);
+  }
+}();
+
+function toRem(length) {
+  return (parseInt(length) / rem());
+}
