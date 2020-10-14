@@ -575,7 +575,7 @@
                           </div> Notify via Facebook
                         </a>
 
-                        <a href="javascript:void(0)" class="btn btn-md btn-primary-500 text-white btn-block mt-3">
+                        <a href="javascript:void(0)" class="btn btn-md btn-primary-500 text-white btn-block mt-3" data-toggle="modal" data-target="#notificationModal">
                           Notification Management
                         </a>
 
@@ -914,6 +914,15 @@
       </div>
       <!-- Notify - END -->
     </main>
+
+    <!-- Notification Modal -->
+    ${  require('../components/notification-modal.html') }
+
+    <!-- Terms Modal -->
+    ${  require('../components/terms-modal.html') }
+
+    <!-- Privacy Modal -->
+    ${  require('../components/privacy-modal.html') }
 
     <!-- Popup 1 - Html -->
     ${  require('../components/popup-1.html') }

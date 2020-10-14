@@ -390,9 +390,14 @@
       }
       .navbar-nav > li {
         margin-right: 0;
-        margin-bottom: 2rem;
         width: 100%;
         height: auto;
+      }
+      .navbar-nav > li > a {
+        margin-bottom: 2rem;
+      }
+      .navbar-nav > li.show > a {
+        margin-bottom: 1rem;
       }
       .navbar-nav > li a:not(.no-link) {
         @include h4;
@@ -434,6 +439,18 @@
         padding-left: 0;
         padding-right: 0;
       }
+      
+
+      // Privacy policy link
+      .navbar-nav > li#terms-service-mobile > a,
+      .navbar-nav > li#privacy-policy-mobile > a {
+        display: none;
+      }
+      .navbar-nav > li.show#terms-service-mobile > a,
+      .navbar-nav > li.show#privacy-policy-mobile > a {
+        display: flex;
+      }
+
       // Card
       .card {
         background: transparent;
@@ -1074,5 +1091,98 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
       width: auto;
       transform: translateY(-50%);
     }
+  }
+}
+
+// Modals
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+.modal {
+
+  .modal-close-button {
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: -3rem;
+    margin-left: 5px;
+    font-size: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    background-color: transparent !important;
+    background-image: url("../images/icons/popup-cancel-light.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 1;
+    cursor: pointer;
+    
+    @include media-breakpoint-down(sm) {
+      width: 1.75rem;
+      height: 1.75rem;
+      right: -2rem;
+    }
+  }
+  .modal-inside {
+    position: relative;
+    width: 100%;
+    margin: auto;
+
+    @include media-breakpoint-down(sm) {
+      width: 85%;
+    }
+  }
+  .modal-content {
+    font-family: $font-family-inter;
+    font-size: 1rem;
+    overflow: auto;
+    background: $primary-050;
+    box-shadow: none;
+    border-radius: 16px;
+    padding: 3rem;
+    width: 100%;
+    border: 0;
+    max-height: 60vh;
+    line-height: 1.4;
+  }
+  .modal-header {
+    margin-bottom: 1rem;
+  }
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    border: 0;
+    padding: 0;
+  }
+  .modal-title {
+    @include h4;
+    font-family: $font-family-metropolis;
+    font-weight: bold;
+  }
+}
+
+// Toast
+.toast {
+  top: $navbar-height;
+  position: absolute;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  margin: 10px auto 0;
+  z-index: 1;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+  font-family: $font-family-metropolis;
+  font-weight: bold;
+  @include h6;
+
+  .toast-body {
+    display: inline-block;
+    background: #FFFFFF;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
   }
 }

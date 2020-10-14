@@ -37,6 +37,16 @@
     <div class="initial-loader">
       <img src="/rush-frontend/images/initial_loader.svg" />
     </div>
+
+    <!-- Toast -->
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="6000">      
+      <div class="toast-body">
+        Link has been copied!
+        <span class="text-success-light svg-color-inherit ml-1">
+          ${ require('../components/icons/check-circle.html') }
+        </span>
+      </div>
+    </div>
     
     <!-- Header -->
     <nav class="navbar fixed-top">
@@ -183,28 +193,6 @@
                       </div>
                     </div>
                 </div>
-              </div>
-            </div>
-            <!-- Card - END -->
-          </div>
-          <!-- Block - END -->
-          <!-- Block -->
-          <div class="block remember-me mt-md-3" id="remember-me-block">
-            <!-- Card -->
-            <div class="card card-size-1">
-              <div class="card-body px-4 py-4-5 text-center text-gray-900">
-                <a href="javascript:void(0)" class="close-btn no-link">
-                  ${  require('../components/icons/close.html') }
-                </a>
-                <h6 class="font-weight-bold mb-3 font-metropolis">
-                  Remember
-                </h6>
-                <div class="font-weight-medium">
-                  Do you want us to remember your e-mail for next time?
-                </div>
-                
-                <button class="btn btn-primary-500 btn-block mt-3" type="button" id="remember-me-btn">Remember</button>
-                <button class="btn btn-link btn-block font-weight-bold text-primary-500 mt-1" type="button" id="remember-me-not-btn">Do not remember</button>
               </div>
             </div>
             <!-- Card - END -->

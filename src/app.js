@@ -4,6 +4,8 @@ import './scss/style.scss';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/dropdown';
+import 'bootstrap/js/dist/modal';
+import 'bootstrap/js/dist/toast';
 
 setTimeout(() => {
   $('.initial-loader').fadeOut("slow");
@@ -229,6 +231,15 @@ $(() => {
     
     $('#remember-me-block').hide();
   })
+
+  // Mobile Policy, Terms and services
+  $('[data-open-dropdown]').on('click', (e) => {
+    const $this = $(e.currentTarget);
+    const $targetEl = $($this.attr("href"));
+
+    $targetEl.children(".dropdown-toggle").dropdown('show');
+    return false;
+  })
   
   // Form validation -- Bootstrap way
   // Loop over them and prevent submission
@@ -252,6 +263,15 @@ $(() => {
       });
     }
   });
+
+  // show modals on page load
+  $('.modal[data-show="true"]').modal();
+
+  // Initialize toast if available
+  setTimeout(() => {
+    if($('.toast').length > 0)
+      $('.toast').toast('show');
+  }, 500);
 });
 
 // Vh height calculation for mobile
