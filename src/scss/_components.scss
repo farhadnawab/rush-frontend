@@ -1042,3 +1042,37 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 #multiple-shipments {
   display: none;
 }
+
+// Remember me
+.remember-me {
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .close-btn svg,
+  .close-btn svg * {
+    color: inherit;
+    fill: currentColor;
+  }
+
+  @include media-breakpoint-down(sm){
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: none !important;
+    background: rgba(0, 0, 0, 0.6);
+
+    .card {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      right: 1rem;
+      width: auto;
+      transform: translateY(-50%);
+    }
+  }
+}
