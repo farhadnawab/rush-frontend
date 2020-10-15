@@ -131,6 +131,19 @@ $(() => {
       $this.closest('.block').removeClass('active');
     });
   }
+  // Prevent body scrolling issue
+  if(window.matchMedia("(max-width: 768px)").matches){
+    $('.overlap-dialog').on('show.bs.collapse', (e) => {
+      e.stopPropagation();
+      
+      $('body').css('overflow', 'hidden');
+    });
+    $('.overlap-dialog').on('hide.bs.collapse', (e) => {
+      e.stopPropagation();
+      
+      $('body').css('overflow', '');
+    });
+  }
 
   // Notify
   $('.notification-wrapper').on('click', (e) => {
