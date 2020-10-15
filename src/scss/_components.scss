@@ -656,6 +656,10 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     min-width: 300px;
     padding: 0;
     width: 100%;
+
+    .card-title-mobile {
+      display: none;
+    }
   }
 
   @include media-breakpoint-down(sm) {
@@ -668,11 +672,29 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
     .mapboxgl-popup-content {
       border-radius: 0;
       padding-top: 45px;
+
+      .card-title-mobile {
+        display: block;
+        @include text-truncate;
+        font-weight: bold;
+        color: $primary-900;
+        text-transform: uppercase;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        line-height: 40px;
+        border-bottom: 1px solid #e9e9eb;
+      }
     }
     .mapboxgl-popup-close-button {
       position: absolute;
       top: 10px;
       right: 10px;
+      width: 1.7rem;
+      height: 1.7rem;
     }
   }
 }
