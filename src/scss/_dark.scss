@@ -38,6 +38,10 @@ body.dark-mode .navbar {
 
     .navbar-collapse {
       background: $gray-900;
+
+      .navbar-nav > li.show > a {
+        background: $gray-900;
+      }
     }
     .navbar-collapse .navbar-nav > li a:not(.no-link) {
       color: #fff;
