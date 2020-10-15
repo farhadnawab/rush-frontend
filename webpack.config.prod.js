@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { CriticalPlugin } = require('webpack-plugin-critical');
 const path = require('path');
 // We need Nodes fs module to read directory contents
 const fs = require('fs');
@@ -84,6 +85,12 @@ module.exports = function () {
             to: path.resolve(__dirname, 'docs/regServiceWorker.js'),
           },
         ],
+      }),
+      new CriticalPlugin({
+        src: 'index.html',
+        inline: true,
+        minify: true,
+        dest: 'index.html',
       }),
     ]
     // We join our htmlPlugin array to the end
