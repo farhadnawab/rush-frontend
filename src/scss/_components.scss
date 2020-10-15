@@ -617,6 +617,7 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
 .mapbox-popup {
   width: 100%;
   max-height: calc(100% - #{$navbar-height} * 3);
+  pointer-events: auto !important;
 
   .mapboxgl-popup-tip {
     display: none;
