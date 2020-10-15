@@ -137,12 +137,14 @@ $(() => {
     $('.overlap-dialog').on('show.bs.collapse', (e) => {
       e.stopPropagation();
       
-      $('body').css('overflow', 'hidden');
+      $('body').css('overflow', 'hidden').css('top', `-${window.scrollY}px`).css('position', 'fixed');
     });
     $('.overlap-dialog').on('hide.bs.collapse', (e) => {
       e.stopPropagation();
       
-      $('body').css('overflow', '');
+      const scrollY = $('body').css('top');
+      $('body').css('overflow', '').css('position', '').css('top', '');
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     });
   }
 
