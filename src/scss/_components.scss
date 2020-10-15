@@ -591,6 +591,9 @@ body:not(.dark-mode) a.toggle-dark-mode-btn {
   body.popup-active #map-wrapper {
     z-index: 12;
   }
+  body.popup-active .main-container > .left-column {
+    display: none !important;
+  }
 }
 
 // Map Popup
