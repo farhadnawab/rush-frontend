@@ -9,8 +9,9 @@ import 'bootstrap/js/dist/toast';
 
 setTimeout(() => {
   $('.initial-loader').fadeOut("slow");
-}, 500);
+}, 250);
 $(() => {
+  
   // Declare local storage
   if (localStorage.getItem('selectedMode') === null) {
     localStorage.setItem('selectedMode', 0);
