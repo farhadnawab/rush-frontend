@@ -53,17 +53,7 @@ function generateCriticalHtmlPlugins(templateDir) {
 
 // Call our function on our views directory.
 const htmlPlugins = generateHtmlPlugins('./src/template/view');
-const criticalHtmlPlugins = new HtmlCriticalWebpackPlugin({
-  base: path.resolve(__dirname, 'docs'),
-  src: 'one-shipment.html',
-  dest: 'one-shipment.html',
-  inline: true,
-  minify: true,
-  extract: true,
-  penthouse: {
-    blockJSRequests: false,
-  },
-});
+const criticalHtmlPlugins = generateCriticalHtmlPlugins('./src/template/view');
 
 module.exports = function () {
   return {
@@ -87,7 +77,7 @@ module.exports = function () {
       }),
       new MinifyPlugin(),
       new ScriptExtHtmlWebpackPlugin({
-        defaultAttribute: 'async',
+        defaultAttribute: 'defer',
       }),
       new CopyPlugin({
         patterns: [
