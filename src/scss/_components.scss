@@ -397,7 +397,12 @@
         margin-bottom: 2rem;
       }
       .navbar-nav > li.show > a {
-        margin-bottom: 1rem;
+        position: sticky;
+        z-index: 11;
+        top: 0;
+        background: #f5fafe;
+        padding-bottom: 1rem;
+        margin-bottom: 0;
       }
       .navbar-nav > li a:not(.no-link) {
         @include h4;
