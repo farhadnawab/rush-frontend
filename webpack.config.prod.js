@@ -5,7 +5,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { CriticalPlugin } = require('webpack-plugin-critical');
+const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
+
 const path = require('path');
 // We need Nodes fs module to read directory contents
 const fs = require('fs');
@@ -27,8 +28,33 @@ function generateHtmlPlugins(templateDir) {
   });
 }
 
+// Our function that generates our html plugins
+function generateHtmlCriticalPlugins(templateDir) {
+  // Read files in template directory
+  const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
+  return templateFiles.map((item) => {
+    // Split names and extension
+    const parts = item.split('.');
+    const name = parts[0];
+
+    // Create new HtmlCriticalWebpackPlugin with options
+    return new HtmlCriticalWebpackPlugin({
+      base: 'docs',
+      src: `${name}.html`,
+      dest: `${name}.html`,
+      inline: true,
+      minify: true,
+      penthouse: {
+        blockJSRequests: false,
+      },
+      ignore: ['@font-face', /url\(/],
+    });
+  });
+}
+
 // Call our function on our views directory.
 const htmlPlugins = generateHtmlPlugins('./src/template/view');
+const htmlCriticalPlugins = generateHtmlCriticalPlugins('./src/template/view');
 
 module.exports = function () {
   return {
@@ -46,11 +72,12 @@ module.exports = function () {
     },
     plugins: [
       new CleanWebpackPlugin(['docs']),
+      ...htmlPlugins,
       new MiniCssExtractPlugin({
         filename: '[name].css',
-        chunkFilename: '[id].css',
       }),
       new MinifyPlugin(),
+      ...htmlCriticalPlugins,
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'defer',
       }),
@@ -86,16 +113,15 @@ module.exports = function () {
           },
         ],
       }),
-      new CriticalPlugin({
-        src: 'index.html',
-        inline: true,
-        minify: true,
-        dest: 'index.html',
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/regServiceWorker.js'),
+            to: path.resolve(__dirname, 'docs/regServiceWorker.js'),
+          },
+        ],
       }),
-    ]
-    // We join our htmlPlugin array to the end
-    // of our webpack plugins array.
-      .concat(htmlPlugins),
+    ],
     module: {
       rules: [
         {
