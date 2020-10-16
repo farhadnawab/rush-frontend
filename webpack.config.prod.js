@@ -6,6 +6,9 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
+const getLogger = require('webpack-log');
+
+const log = getLogger({ name: 'webpack-batman' });
 const path = require('path');
 // We need Nodes fs module to read directory contents
 const fs = require('fs');
@@ -28,32 +31,32 @@ function generateHtmlPlugins(templateDir) {
 }
 
 // Our function that generates our html plugins
-function generateCriticalHtmlPlugins(templateDir) {
+function generateHtmlCriticalPlugins(templateDir) {
   // Read files in template directory
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
   return templateFiles.map((item) => {
     // Split names and extension
     const parts = item.split('.');
     const name = parts[0];
-    const extension = parts[1];
-    // Create new HTMLWebpackPlugin with options
+
+    // Create new HtmlCriticalWebpackPlugin with options
     return new HtmlCriticalWebpackPlugin({
-      base: path.resolve(__dirname, 'docs'),
-      src: `${name}.${extension}`,
-      dest: `${name}.${extension}`,
+      base: 'docs',
+      src: `${name}.html`,
+      dest: `${name}.html`,
       inline: true,
       minify: true,
-      extract: true,
       penthouse: {
         blockJSRequests: false,
       },
+      ignore: ['@font-face', /url\(/],
     });
   });
 }
 
 // Call our function on our views directory.
 const htmlPlugins = generateHtmlPlugins('./src/template/view');
-const criticalHtmlPlugins = generateCriticalHtmlPlugins('./src/template/view');
+const htmlCriticalPlugins = generateHtmlCriticalPlugins('./src/template/view');
 
 module.exports = function () {
   return {
@@ -71,11 +74,12 @@ module.exports = function () {
     },
     plugins: [
       new CleanWebpackPlugin(['docs']),
+      ...htmlPlugins,
       new MiniCssExtractPlugin({
         filename: '[name].css',
-        chunkFilename: '[id].css',
       }),
       new MinifyPlugin(),
+      ...htmlCriticalPlugins,
       new ScriptExtHtmlWebpackPlugin({
         defaultAttribute: 'defer',
       }),
@@ -111,10 +115,15 @@ module.exports = function () {
           },
         ],
       }),
-    ]
-    // We join our htmlPlugin array to the end
-    // of our webpack plugins array.
-      .concat(htmlPlugins).concat(criticalHtmlPlugins),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, './src/regServiceWorker.js'),
+            to: path.resolve(__dirname, 'docs/regServiceWorker.js'),
+          },
+        ],
+      }),
+    ],
     module: {
       rules: [
         {
