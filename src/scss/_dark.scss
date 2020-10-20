@@ -165,8 +165,11 @@ body.dark-mode .mapbox-marker {
 // Overlay on card
 body.dark-mode .overlap-dialog {
 
+  .card {
+    background: $gray-700;
+  }
   &:before {
-    background: $gray-500;
+    background: $gray-900;
   }
 }
 

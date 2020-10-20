@@ -138,6 +138,13 @@ $theme-colors: (
   "gray-900":       $gray-900
 );
 
+// revert focus color to original
+@each $color, $value in $theme-colors {
+  body a.text-#{$color}:focus {
+    color: $value !important;
+  }
+}
+
 // Buttons
 $btn-padding-x:               1rem;
 $btn-padding-y:               0.75rem;
