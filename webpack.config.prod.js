@@ -6,9 +6,6 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlCriticalWebpackPlugin = require('html-critical-webpack-plugin');
-const getLogger = require('webpack-log');
-
-const log = getLogger({ name: 'webpack-batman' });
 const path = require('path');
 // We need Nodes fs module to read directory contents
 const fs = require('fs');
